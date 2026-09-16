@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="shortcut icon" href="assets/img/logo-dark.svg" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Coffee House</title>
+</head>
+<body>
+  <header class="header container" aria-label="Site header">
+    <a href="/" aria-label="Resource - Home" class="header__logo">
+      <img src="assets/img/logo.svg" alt="Coffee House Logo">
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+      <ul class="nav__list">
+        <li class="nav__item"><a class="nav__link" href="#coffee">Favorite coffee</a></li>
+        <li class="nav__item"><a class="nav__link" href="#about">About</a></li>
+        <li class="nav__item"><a class="nav__link" href="#mobile">Mobile app</a></li>
+        <li class="nav__item"><a class="nav__link" href="#contact">Contact us</a></li>
+      </ul>
+    </nav>
+    <div class="header__actions">
+      <button class="theme-toggle" aria-label="Switch theme"></button>
+      <button class="menu-toggle" aria-label="Open menu">Menu</button>
+    </div>
+  </header>
+
+  <main class="main container">
+    <section aria-labelledby="hero-title" class="hero">
+      <div class="hero__content">
+        <h1 id="hero-title" class="hero__title">
+          <span class="hero__title--highlight">Enjoy</span> premium coffee at our charming cafe
+        </h1>
+        <p class="hero__description">
+          With its inviting atmosphere and delicious coffee options, 
+          the Coffee House Resource is popular destination for coffee lovers 
+          and those seeking a warm and inviting space 
+          to enjoy their favorite beverage.
+        </p>
+        <button type="button" class="button">Menu</button>
+      </div>
+    </section>
+
+    <section id="coffee" aria-labelledby="coffee-title">
+      <h2 id="coffee-title">Choose your favorite coffee</h2>
+      <div class="slider">
+        <div>
+          <article class="slider-card">
+            <div>
+              <img src="" alt="">
+            </div>
+            <h3>S’mores Frappuccino</h3>
+            <p>
+              This new drink takes an espresso and mixes it 
+              with brown sugar and cinnamon before being topped with oat milk.
+            </p>
+            <span>$5.50</span>
+          </article>
+        </div>
+        <div class="slider-nav">
+          <button class="slider-nav-left"></button>
+          <button class="slider-nav-right"></button>
+        </div>
+        <div aria-label="Choose coffee">
+          <button type="button" aria-label="Show S’mores Frappuccino" aria-current="true"></button>
+          <button type="button" aria-label="Show previous coffee"></button>
+          <button type="button" aria-label="Show next coffee"></button>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>Resource is the perfect and cozy place where you can enjoy a variety of hot beverages, relax, catch up with friends, or get some work done.</h2>
+      <div>
+        <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
+      </div>
+    </section>
+
+    <section id="mobile">
+      <div>
+        <h2><span>Download</span> our app to start ordering</h2>
+        <p>Download the Resource app today and experience the comfort of ordering your favorite coffee from whenever you are</p>
+        <div>
+          <a href=""><span>Available on the</span><span>App Store</span></a>
+          <a href=""><span>Available on</span><span>Google Play</span></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer container" id="contact" aria-labelledby="contact-title">
+    <div>
+      <h2 id="contact-title">Contact us</h2>
+      <address>
+        <p>8558 Green Rd., LA</p>
+        <a href="tel:+16035550123">+1 (603) 555-0123</a>
+        <p>Mon–Sat: 9:00–23:00</p>
+      </address>
+    </div>
+    <div>
+      <p>Sip, Savor, Smile. It’s coffee time!</p>
+      <ul class="social-links">
+        <li>
+          <a href="" aria-label="X (Twitter)">
+            <svg aria-hidden="true"></svg>
+          </a>
+        </li>
+        <li>
+          <a href="" aria-label="Instagram">
+            <svg aria-hidden="true"></svg>
+          </a>
+        </li>
+        <li>
+          <a href="" aria-label="Facebook">
+            <svg aria-hidden="true"></svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

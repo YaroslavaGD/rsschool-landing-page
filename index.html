@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="shortcut icon" href="assets/img/logo-dark.svg" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -10,38 +12,42 @@
   <title>Coffee House</title>
 </head>
 <body>
-  <header>
-    <a href="/" aria-label="Resource - Home">
-      <img src="" alt="">
+  <header class="header container" aria-label="Site header">
+    <a href="/" aria-label="Resource - Home" class="header__logo">
+      <img src="assets/img/logo.svg" alt="Coffee House Logo">
     </a>
-    <nav aria-label="Main navigation">
-      <ul>
-        <li><a href="#coffee">Favorite coffee</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#mobile">Mobile app</a></li>
-        <li><a href="#contact">Contact us</a></li>
+    <nav class="nav" aria-label="Main navigation">
+      <ul class="nav__list">
+        <li class="nav__item"><a class="nav__link" href="#coffee">Favorite coffee</a></li>
+        <li class="nav__item"><a class="nav__link" href="#about">About</a></li>
+        <li class="nav__item"><a class="nav__link" href="#mobile">Mobile app</a></li>
+        <li class="nav__item"><a class="nav__link" href="#contact">Contact us</a></li>
       </ul>
     </nav>
-    <div>
-      <button aria-label="Switch theme"></button>
-      <button>Menu</button>
+    <div class="header__actions">
+      <button class="theme-toggle" aria-label="Switch theme"></button>
+      <button class="menu-toggle" aria-label="Open menu">Menu</button>
     </div>
   </header>
-  <main>
 
-    <section aria-labelledby="hero-title">
-      <h1 id="hero-title">Enjoy premium coffee at our charming cafe</h1>
-      <p>
-        With its inviting atmosphere and delicious coffee options, 
-        the Coffee House Resource is popular destination for coffee lovers 
-        and those seeking a warm and inviting space 
-        to enjoy their favorite beverage.
-      </p>
-      <button type="button">Menu</button>
+  <main class="main container">
+    <section aria-labelledby="hero-title" class="hero">
+      <div class="hero__content">
+        <h1 id="hero-title" class="hero__title">
+          <span class="hero__title--highlight">Enjoy</span> premium coffee at our charming cafe
+        </h1>
+        <p class="hero__description">
+          With its inviting atmosphere and delicious coffee options, 
+          the Coffee House Resource is popular destination for coffee lovers 
+          and those seeking a warm and inviting space 
+          to enjoy their favorite beverage.
+        </p>
+        <button type="button" class="button">Menu</button>
+      </div>
     </section>
 
-    <section id="coffee">
-      <h2>Choose your favorite coffee</h2>
+    <section id="coffee" aria-labelledby="coffee-title">
+      <h2 id="coffee-title">Choose your favorite coffee</h2>
       <div class="slider">
         <div>
           <article class="slider-card">
@@ -80,7 +86,7 @@
 
     <section id="mobile">
       <div>
-        <h2>Download our app to start ordering</h2>
+        <h2><span>Download</span> our app to start ordering</h2>
         <p>Download the Resource app today and experience the comfort of ordering your favorite coffee from whenever you are</p>
         <div>
           <a href=""><span>Available on the</span><span>App Store</span></a>
@@ -91,9 +97,9 @@
 
   </main>
 
-  <footer id="contact">
+  <footer class="footer container" id="contact" aria-labelledby="contact-title">
     <div>
-      <h2>Contact us</h2>
+      <h2 id="contact-title">Contact us</h2>
       <address>
         <p>8558 Green Rd., LA</p>
         <a href="tel:+16035550123">+1 (603) 555-0123</a>

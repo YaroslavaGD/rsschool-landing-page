@@ -31,7 +31,7 @@
   </header>
 
   <main class="main container">
-    <section aria-labelledby="hero-title" class="hero section">
+    <section class="hero section" aria-labelledby="hero-title">
       <div class="hero__content">
         <h1 id="hero-title" class="hero__title">
           <span class="hero__title--highlight">Enjoy</span> premium coffee at our charming cafe
@@ -46,13 +46,46 @@
       </div>
     </section>
 
-    <section id="coffee" aria-labelledby="coffee-title" class="coffee section">
+    <section id="coffee" class="coffee section" aria-labelledby="coffee-title" >
       <h2 id="coffee-title" class="title">Choose your <span class="title--highlight">favorite</span> coffee</h2>
       <div class="slider">
         <div class="slider-track">
           <article class="slider-card">
             <div class="slider-card__image-wrapper">
-              <img class="slider-card__image" src="assets/img/coffee-1.png" alt="S’mores Frappuccino">
+              <picture class="slider-card__image">
+                <!-- desktop -->
+                <source 
+                  srcset="assets/img/slider/coffee-1-480.webp 1x, assets/img/slider/coffee-1-960.webp 2x" 
+                  type="image/webp" 
+                  media="(min-width: 1024px)">
+                <source 
+                  srcset="assets/img/slider/coffee-1-480.png 1x, assets/img/slider/coffee-1-960.png 2x" 
+                  type="image/jpeg" 
+                  media="(min-width: 1024px)">
+
+                <!-- tablet -->
+                <source 
+                  srcset="assets/img/slider/coffee-1-480.webp 1x, assets/img/slider/coffee-1-960.webp 2x" 
+                  type="image/webp" 
+                  media="(min-width: 768px)">
+                <source 
+                  srcset="assets/img/slider/coffee-1-480.png 1x, assets/img/slider/coffee-1-960.png 2x" 
+                  type="image/jpeg" 
+                  media="(min-width: 768px)">
+
+                <!-- mobile -->
+                <source 
+                  srcset="assets/img/slider/coffee-1-348.webp 1x, assets/img/slider/coffee-1-696.webp 2x" 
+                  type="image/webp" 
+                  media="(max-width: 767px)">
+                <source 
+                  srcset="assets/img/slider/coffee-1-348.png 1x, assets/img/slider/coffee-1-696.png 2x" 
+                  type="image/png" 
+                  media="(max-width: 767px)">
+
+                <!-- fallback -->
+                <img class="about__img" src="assets/img/slider/coffee-1-348.png" alt="S’mores Frappuccino" loading="lazy">
+              </picture>
             </div>
             <h3 class="slider-card__title">S’mores Frappuccino</h3>
             <p class="slider-card__description">
@@ -82,13 +115,156 @@
       </div>
     </section>
 
-    <section id="about">
+    <section id="about" class="about section" aria-labelledby="about-title">
       <h2 class="title">Resource is <span class="title--highlight">the perfect and cozy place</span> where you can enjoy a variety of hot beverages, relax, catch up with friends, or get some work done.</h2>
-      <div>
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
+      <div class="about__pictures">
+        <div class="about__picture-wrapper about__picture-wrapper--big about__picture-wrapper--big-top">
+          <picture class="about__picture">
+            <!-- desktop -->
+            <source 
+              srcset="assets/img/about/about-1-660.webp 1x, assets/img/about/about-1-1320.webp 2x" 
+              type="image/webp" 
+              media="(min-width: 1024px)">
+            <source 
+              srcset="assets/img/about/about-1-600.jpg 1x, assets/img/about/about-1-1320.jpg 2x" 
+              type="image/jpeg" 
+              media="(min-width: 1024px)">
+  
+            <!-- tablet -->
+            <source 
+              srcset="assets/img/about/about-1-660.webp 1x, assets/img/about/about-1-1320.webp 2x" 
+              type="image/webp" 
+              media="(min-width: 768px)">
+            <source 
+              srcset="assets/img/about/about-1-660.jpg 1x, assets/img/about/about-1-1320.jpg 2x" 
+              type="image/jpeg" 
+              media="(min-width: 768px)">
+  
+            <!-- mobile -->
+            <source 
+              srcset="assets/img/about/about-1-688.webp 1x, assets/img/about/about-1-1376.webp 2x" 
+              type="image/webp" 
+              media="(max-width: 767px)">
+            <source 
+              srcset="assets/img/about/about-1-688.jpg 1x, assets/img/about/about-1-1376.jpg 2x" 
+              type="image/jpeg" 
+              media="(max-width: 767px)">
+  
+            <!-- fallback -->
+            <img class="about__img" src="assets/img/about/about-1-680.jpg" alt="A woman relaxing with a cup of coffee at a cafe." loading="lazy">
+          </picture>
+        </div>
+
+        <div class="about__picture-wrapper about__picture-wrapper--small about__picture-wrapper--small-top">
+          <picture class="about__picture">
+            <!-- desktop -->
+            <source 
+              srcset="assets/img/about/about-3-660.webp 1x, assets/img/about/about-3-1320.webp 2x" 
+              type="image/webp" 
+              media="(min-width: 1024px)">
+            <source 
+              srcset="assets/img/about/about-3-600.jpg 1x, assets/img/about/about-3-1320.jpg 2x" 
+              type="image/jpeg" 
+              media="(min-width: 1024px)">
+          
+            <!-- tablet -->
+            <source 
+              srcset="assets/img/about/about-3-660.webp 1x, assets/img/about/about-3-1320.webp 2x" 
+              type="image/webp" 
+              media="(min-width: 768px)">
+            <source 
+              srcset="assets/img/about/about-3-660.jpg 1x, assets/img/about/about-3-1320.jpg 2x" 
+              type="image/jpeg" 
+              media="(min-width: 768px)">
+          
+            <!-- mobile -->
+            <source 
+              srcset="assets/img/about/about-3-688.webp 1x, assets/img/about/about-3-1376.webp 2x" 
+              type="image/webp" 
+              media="(max-width: 767px)">
+            <source 
+              srcset="assets/img/about/about-3-688.jpg 1x, assets/img/about/about-3-1376.jpg 2x" 
+              type="image/jpeg" 
+              media="(max-width: 767px)">
+          
+            <!-- fallback -->
+            <img class="about__img" src="assets/img/about/about-3-680.jpg" alt="a cafe." loading="lazy">
+          </picture>
+        </div>
+
+        <div class="about__picture-wrapper about__picture-wrapper--small about__picture-wrapper--small-bottom">
+          <picture class="about__picture">
+            <!-- desktop -->
+            <source 
+              srcset="assets/img/about/about-2-660.webp 1x, assets/img/about/about-2-1320.webp 2x" 
+              type="image/webp" 
+              media="(min-width: 1024px)">
+            <source 
+              srcset="assets/img/about/about-2-600.jpg 1x, assets/img/about/about-2-1320.jpg 2x" 
+              type="image/jpeg" 
+              media="(min-width: 1024px)">
+  
+            <!-- tablet -->
+            <source 
+              srcset="assets/img/about/about-2-660.webp 1x, assets/img/about/about-2-1320.webp 2x" 
+              type="image/webp" 
+              media="(min-width: 768px)">
+            <source 
+              srcset="assets/img/about/about-2-660.jpg 1x, assets/img/about/about-2-1320.jpg 2x" 
+              type="image/jpeg" 
+              media="(min-width: 768px)">
+  
+            <!-- mobile -->
+            <source 
+              srcset="assets/img/about/about-2-688.webp 1x, assets/img/about/about-2-1376.webp 2x" 
+              type="image/webp" 
+              media="(max-width: 767px)">
+            <source 
+              srcset="assets/img/about/about-2-688.jpg 1x, assets/img/about/about-2-1376.jpg 2x" 
+              type="image/jpeg" 
+              media="(max-width: 767px)">
+  
+            <!-- fallback -->
+            <img class="about__img" src="assets/img/about/about-2-680.jpg" alt="A woman relaxing with a cup of coffee at a cafe." loading="lazy">
+          </picture>
+        </div>
+
+        <div class="about__picture-wrapper about__picture-wrapper--big about__picture-wrapper--big-bottom">
+          <picture class="about__picture">
+            <!-- desktop -->
+            <source 
+              srcset="assets/img/about/about-4-660.webp 1x, assets/img/about/about-4-1320.webp 2x" 
+              type="image/webp" 
+              media="(min-width: 1024px)">
+            <source 
+              srcset="assets/img/about/about-4-600.jpg 1x, assets/img/about/about-4-1320.jpg 2x" 
+              type="image/jpeg" 
+              media="(min-width: 1024px)">
+  
+            <!-- tablet -->
+            <source 
+              srcset="assets/img/about/about-4-660.webp 1x, assets/img/about/about-4-1320.webp 2x" 
+              type="image/webp" 
+              media="(min-width: 768px)">
+            <source 
+              srcset="assets/img/about/about-4-660.jpg 1x, assets/img/about/about-4-1320.jpg 2x" 
+              type="image/jpeg" 
+              media="(min-width: 768px)">
+  
+            <!-- mobile -->
+            <source 
+              srcset="assets/img/about/about-4-688.webp 1x, assets/img/about/about-4-1376.webp 2x" 
+              type="image/webp" 
+              media="(max-width: 767px)">
+            <source 
+              srcset="assets/img/about/about-4-688.jpg 1x, assets/img/about/about-4-1376.jpg 2x" 
+              type="image/jpeg" 
+              media="(max-width: 767px)">
+  
+            <!-- fallback -->
+            <img class="about__img" src="assets/img/about/about-4-680.jpg" alt="A couple enjoying coffee together at a cozy cafe." loading="lazy">
+          </picture>
+        </div>
       </div>
     </section>
 

@@ -26,12 +26,12 @@
     </nav>
     <div class="header__actions">
       <button class="theme-toggle" aria-label="Switch theme"></button>
-      <button class="menu-toggle" aria-label="Open menu">Menu</button>
+      <button class="menu-toggle button" aria-label="Open menu">Menu</button>
     </div>
   </header>
 
   <main class="main container">
-    <section aria-labelledby="hero-title" class="hero">
+    <section aria-labelledby="hero-title" class="hero section">
       <div class="hero__content">
         <h1 id="hero-title" class="hero__title">
           <span class="hero__title--highlight">Enjoy</span> premium coffee at our charming cafe
@@ -46,36 +46,44 @@
       </div>
     </section>
 
-    <section id="coffee" aria-labelledby="coffee-title">
-      <h2 id="coffee-title">Choose your favorite coffee</h2>
+    <section id="coffee" aria-labelledby="coffee-title" class="coffee section">
+      <h2 id="coffee-title" class="title">Choose your <span class="title--highlight">favorite</span> coffee</h2>
       <div class="slider">
-        <div>
+        <div class="slider-track">
           <article class="slider-card">
-            <div>
-              <img src="" alt="">
+            <div class="slider-card__image-wrapper">
+              <img class="slider-card__image" src="assets/img/coffee-1.png" alt="S’mores Frappuccino">
             </div>
-            <h3>S’mores Frappuccino</h3>
-            <p>
+            <h3 class="slider-card__title">S’mores Frappuccino</h3>
+            <p class="slider-card__description">
               This new drink takes an espresso and mixes it 
               with brown sugar and cinnamon before being topped with oat milk.
             </p>
-            <span>$5.50</span>
+            <span class="slider-card__price">$5.50</span>
           </article>
         </div>
         <div class="slider-nav">
-          <button class="slider-nav-left"></button>
-          <button class="slider-nav-right"></button>
+          <button class="slider-nav__button slider-nav__button--left">
+            <svg class="slider-nav__icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="slider-nav__path" stroke="#403F3D" d="M18.5 12H6M12 18L6 12L12 6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="slider-nav__button slider-nav__button--right">
+            <svg class="slider-nav__icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="slider-nav__path" stroke="#403F3D" d="M6 12H18.5M12.5 18L18.5 12L12.5 6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
         </div>
-        <div aria-label="Choose coffee">
-          <button type="button" aria-label="Show S’mores Frappuccino" aria-current="true"></button>
-          <button type="button" aria-label="Show previous coffee"></button>
-          <button type="button" aria-label="Show next coffee"></button>
+        <div class="slider-dots" aria-label="Choose coffee">
+          <button class="slider-dot" type="button" aria-label="Show S’mores Frappuccino" aria-current="true"></button>
+          <button class="slider-dot" type="button" aria-label="Show previous coffee"></button>
+          <button class="slider-dot" type="button" aria-label="Show next coffee"></button>
         </div>
       </div>
     </section>
 
     <section id="about">
-      <h2>Resource is the perfect and cozy place where you can enjoy a variety of hot beverages, relax, catch up with friends, or get some work done.</h2>
+      <h2 class="title">Resource is <span class="title--highlight">the perfect and cozy place</span> where you can enjoy a variety of hot beverages, relax, catch up with friends, or get some work done.</h2>
       <div>
         <img src="" alt="">
         <img src="" alt="">
@@ -86,7 +94,7 @@
 
     <section id="mobile">
       <div>
-        <h2><span>Download</span> our app to start ordering</h2>
+        <h2 class="title"> <span class="title--highlight">Download</span> our app to start ordering</h2>
         <p>Download the Resource app today and experience the comfort of ordering your favorite coffee from whenever you are</p>
         <div>
           <a href=""><span>Available on the</span><span>App Store</span></a>
@@ -107,7 +115,7 @@
       </address>
     </div>
     <div>
-      <p>Sip, Savor, Smile. It’s coffee time!</p>
+      <p class="title">Sip, Savor, Smile. <span class="title--highlight">It’s coffee time!</span></p>
       <ul class="social-links">
         <li>
           <a href="" aria-label="X (Twitter)">

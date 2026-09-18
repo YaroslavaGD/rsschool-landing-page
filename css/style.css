@@ -236,7 +236,7 @@ body {
   justify-content: center;
 }
 
-.slider-card__image {
+.slider-card__picture {
   width: var(--size-card);
   height: var(--size-card);
 }

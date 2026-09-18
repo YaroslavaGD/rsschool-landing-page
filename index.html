@@ -12,11 +12,11 @@
   <title>Coffee House</title>
 </head>
 <body>
-  <header class="header container" aria-label="Site header">
+  <header class="header container">
     <a href="/" aria-label="Resource - Home" class="header__logo">
-      <img src="assets/img/logo.svg" alt="Coffee House Logo">
+      <img src="assets/img/logo.svg" alt="">
     </a>
-    <nav class="nav" aria-label="Main navigation">
+    <nav class="nav" aria-label="Main">
       <ul class="nav__list">
         <li class="nav__item"><a class="nav__link" href="#coffee">Favorite coffee</a></li>
         <li class="nav__item"><a class="nav__link" href="#about">About</a></li>
@@ -25,8 +25,8 @@
       </ul>
     </nav>
     <div class="header__actions">
-      <button class="theme-toggle" aria-label="Switch theme"></button>
-      <button class="menu-toggle button" aria-label="Open menu">Menu</button>
+      <button type="button" role="switch" aria-checked="false" class="theme-toggle" aria-label="Switch theme"></button>
+      <button class="menu-toggle button">Menu</button>
     </div>
   </header>
 
@@ -42,35 +42,25 @@
           and those seeking a warm and inviting space 
           to enjoy their favorite beverage.
         </p>
-        <button type="button" class="button">Menu</button>
+        <a href="#coffee" class="button">Menu</a>
       </div>
     </section>
 
     <section id="coffee" class="coffee section" aria-labelledby="coffee-title" >
       <h2 id="coffee-title" class="title">Choose your <span class="title--highlight">favorite</span> coffee</h2>
-      <div class="slider">
-        <div class="slider-track">
-          <article class="slider-card">
+      <div class="slider" role="group" aria-roledescription="carousel" aria-label="Favorite coffee">
+        <div class="slider-track" aria-live="polite">
+          <article class="slider-card" role="group" aria-roledescription="slide" aria-label="1 of 3">
             <div class="slider-card__image-wrapper">
-              <picture class="slider-card__image">
-                <!-- desktop -->
-                <source 
-                  srcset="assets/img/slider/coffee-1-480.webp 1x, assets/img/slider/coffee-1-960.webp 2x" 
-                  type="image/webp" 
-                  media="(min-width: 1024px)">
-                <source 
-                  srcset="assets/img/slider/coffee-1-480.png 1x, assets/img/slider/coffee-1-960.png 2x" 
-                  type="image/jpeg" 
-                  media="(min-width: 1024px)">
-
-                <!-- tablet -->
+              <picture class="slider-card__picture">
+                <!-- desktop-tablet -->
                 <source 
                   srcset="assets/img/slider/coffee-1-480.webp 1x, assets/img/slider/coffee-1-960.webp 2x" 
                   type="image/webp" 
                   media="(min-width: 768px)">
                 <source 
                   srcset="assets/img/slider/coffee-1-480.png 1x, assets/img/slider/coffee-1-960.png 2x" 
-                  type="image/jpeg" 
+                  type="image/png" 
                   media="(min-width: 768px)">
 
                 <!-- mobile -->
@@ -84,7 +74,7 @@
                   media="(max-width: 767px)">
 
                 <!-- fallback -->
-                <img class="about__img" src="assets/img/slider/coffee-1-348.png" alt="S’mores Frappuccino" loading="lazy">
+                <img class="slider-card__img" src="assets/img/slider/coffee-1-348.png" alt="Iced frappuccino in a tall glass with whipped foam" loading="lazy">
               </picture>
             </div>
             <h3 class="slider-card__title">S’mores Frappuccino</h3>
@@ -96,21 +86,21 @@
           </article>
         </div>
         <div class="slider-nav">
-          <button class="slider-nav__button slider-nav__button--left">
+          <button type="button" class="slider-nav__button slider-nav__button--left" aria-label="Previous coffee">
             <svg class="slider-nav__icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path class="slider-nav__path" stroke="#403F3D" d="M18.5 12H6M12 18L6 12L12 6" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
-          <button class="slider-nav__button slider-nav__button--right">
+          <button type="button" class="slider-nav__button slider-nav__button--right" aria-label="Next coffee">
             <svg class="slider-nav__icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path class="slider-nav__path" stroke="#403F3D" d="M6 12H18.5M12.5 18L18.5 12L12.5 6" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
         </div>
-        <div class="slider-dots" aria-label="Choose coffee">
-          <button class="slider-dot" type="button" aria-label="Show S’mores Frappuccino" aria-current="true"></button>
-          <button class="slider-dot" type="button" aria-label="Show previous coffee"></button>
-          <button class="slider-dot" type="button" aria-label="Show next coffee"></button>
+        <div class="slider-dots" role="group" aria-label="Choose coffee">
+          <button type="button" class="slider-dot" type="button" aria-label="Show S’mores Frappuccino" aria-current="true"></button>
+          <button type="button" class="slider-dot" type="button" aria-label="Show Caramel Macchiato"></button>
+          <button type="button" class="slider-dot" type="button" aria-label="Show Ice coffee"></button>
         </div>
       </div>
     </section>
@@ -120,17 +110,7 @@
       <div class="about__pictures">
         <div class="about__picture-wrapper about__picture-wrapper--big about__picture-wrapper--big-top">
           <picture class="about__picture">
-            <!-- desktop -->
-            <source 
-              srcset="assets/img/about/about-1-660.webp 1x, assets/img/about/about-1-1320.webp 2x" 
-              type="image/webp" 
-              media="(min-width: 1024px)">
-            <source 
-              srcset="assets/img/about/about-1-600.jpg 1x, assets/img/about/about-1-1320.jpg 2x" 
-              type="image/jpeg" 
-              media="(min-width: 1024px)">
-  
-            <!-- tablet -->
+            <!-- desktop-tablet -->
             <source 
               srcset="assets/img/about/about-1-660.webp 1x, assets/img/about/about-1-1320.webp 2x" 
               type="image/webp" 
@@ -157,17 +137,7 @@
 
         <div class="about__picture-wrapper about__picture-wrapper--small about__picture-wrapper--small-top">
           <picture class="about__picture">
-            <!-- desktop -->
-            <source 
-              srcset="assets/img/about/about-3-660.webp 1x, assets/img/about/about-3-1320.webp 2x" 
-              type="image/webp" 
-              media="(min-width: 1024px)">
-            <source 
-              srcset="assets/img/about/about-3-600.jpg 1x, assets/img/about/about-3-1320.jpg 2x" 
-              type="image/jpeg" 
-              media="(min-width: 1024px)">
-          
-            <!-- tablet -->
+            <!-- desktop-tablet -->
             <source 
               srcset="assets/img/about/about-3-660.webp 1x, assets/img/about/about-3-1320.webp 2x" 
               type="image/webp" 
@@ -194,17 +164,7 @@
 
         <div class="about__picture-wrapper about__picture-wrapper--small about__picture-wrapper--small-bottom">
           <picture class="about__picture">
-            <!-- desktop -->
-            <source 
-              srcset="assets/img/about/about-2-660.webp 1x, assets/img/about/about-2-1320.webp 2x" 
-              type="image/webp" 
-              media="(min-width: 1024px)">
-            <source 
-              srcset="assets/img/about/about-2-600.jpg 1x, assets/img/about/about-2-1320.jpg 2x" 
-              type="image/jpeg" 
-              media="(min-width: 1024px)">
-  
-            <!-- tablet -->
+            <!-- desktop-tablet -->
             <source 
               srcset="assets/img/about/about-2-660.webp 1x, assets/img/about/about-2-1320.webp 2x" 
               type="image/webp" 
@@ -231,17 +191,7 @@
 
         <div class="about__picture-wrapper about__picture-wrapper--big about__picture-wrapper--big-bottom">
           <picture class="about__picture">
-            <!-- desktop -->
-            <source 
-              srcset="assets/img/about/about-4-660.webp 1x, assets/img/about/about-4-1320.webp 2x" 
-              type="image/webp" 
-              media="(min-width: 1024px)">
-            <source 
-              srcset="assets/img/about/about-4-600.jpg 1x, assets/img/about/about-4-1320.jpg 2x" 
-              type="image/jpeg" 
-              media="(min-width: 1024px)">
-  
-            <!-- tablet -->
+            <!-- desktop-tablet -->
             <source 
               srcset="assets/img/about/about-4-660.webp 1x, assets/img/about/about-4-1320.webp 2x" 
               type="image/webp" 

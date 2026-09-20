@@ -20,6 +20,7 @@
   --font-size-small: 0.625rem;
 
   --line-height-standard: 150%;
+  --line-height-button-small: 140%;
   --line-height-title: 125%;
   --line-height-h1: 105%;
 
@@ -32,19 +33,26 @@
   --indent-small: 1rem;
   --indent-section: 6.25rem;
   --indent-button: 4.875rem;
+  --indent-button-small: 0.75rem;
+  --indent-icon-gap: 0.5rem;
+  --indent-gap-small: 0.125rem;
 
   /* Components */
   --size-card: 30rem;
   --size-slider-button: 3.75rem;
-  --size-dot-gap: 0.75rem;
+  --size-dot-gap: 0.75rem; /*12px*/
   --size-dot-width: 2.5rem;
   --size-dot-height: 0.25rem;
   --size-dot-radius: 6.25rem;
+  --size-button-radius: 6.25rem;
 
   --size-about-width: 41.25rem;
   --size-about-big-height: 36.875rem;
   --size-about-small-height: 26.875rem;
   --size-about-radius: 1.25rem;
+  --size-button-icon: 2.25rem;
+
+  --max-width-button: 12.5rem;
 }
 
 [data-theme="dark"] {
@@ -372,5 +380,68 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* object-position: center; */
+  scale: 1.1;
+}
+
+
+/*mobile*/
+.mobile {
+  display: flex;
+  align-items: center;
+  gap: var(--indent-section);
+  width: 100%;
+}
+
+.mobile__content {
+  display: flex;
+  flex-direction: column;
+  max-width: calc(50% - var(--indent-section)/2);
+}
+
+.mobile__description {
+  margin: 0;
+  margin-bottom: var(--indent-standard);
+}
+
+.mobile__links {
+  display: flex;
+  justify-content: flex-start;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--indent-half);
+}
+
+.mobile__link-container {
+  width: calc(50% - var(--indent-half) / 2);
+  max-width: var(--max-width-button);
+}
+
+.mobile__link {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--indent-gap-small);
+  width: 100%;
+  max-width: var(--max-width-button);
+  padding: var(--indent-button-small);
+  padding-left: calc(var(--indent-half) + var(--size-button-icon) + var(--indent-icon-gap));
+  border: 1px solid var(--border-inverse);
+  border-radius: var(--size-button-radius);
+  text-decoration: none;
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-standard);
+  color: var(--text-primary);
+}
+
+.mobile__link-svg {
+  position: absolute;
+  left: var(--indent-half);
+  width: var(--size-button-icon);
+  height: var(--size-button-icon);
+}
+
+.mobile__link-text--small {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-button-small);
 }

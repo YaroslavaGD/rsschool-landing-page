@@ -356,17 +356,8 @@ body {
 }
 
 .about__picture-wrapper {
-  /* width: var(--size-about-width); */
   overflow: hidden;
   border-radius: var(--radius-half);
-}
-
-.about__picture-wrapper--big {
-  height: var(--size-about-big-height);
-}
-
-.about__picture-wrapper--small {
-  height: var(--size-about-small-height);
 }
 
 .about__picture-wrapper--big-top {
@@ -478,12 +469,10 @@ body {
 }
 
 .footer__social {
-  order: 0;
   width: calc(50% - var(--indent-section) / 2);
 }
 
 .footer__contact {
-  order: 1;
   width: calc(50% - var(--indent-section) / 2);
 }
 

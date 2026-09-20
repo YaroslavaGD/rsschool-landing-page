@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="shortcut icon" href="assets/img/logo-dark.svg" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Coffee House</title>
+</head>
+<body>
+  <header class="header container">
+    <a href="/" aria-label="Resource - Home" class="header__logo">
+      <img src="assets/img/logo.svg" alt="">
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul class="nav__list">
+        <li class="nav__item"><a class="nav__link" href="#coffee">Favorite coffee</a></li>
+        <li class="nav__item"><a class="nav__link" href="#about">About</a></li>
+        <li class="nav__item"><a class="nav__link" href="#mobile">Mobile app</a></li>
+        <li class="nav__item"><a class="nav__link" href="#contact">Contact us</a></li>
+      </ul>
+    </nav>
+    <div class="header__actions">
+      <button type="button" role="switch" aria-checked="false" class="theme-toggle" aria-label="Switch theme"></button>
+      <a class="menu-toggle button" href="menu.html">Menu</a>
+    </div>
+  </header>
+
+  <main class="main container">
+    <div class="section">
+      <h1 class="visually-hidden">Menu</h1>
+      <p class="title">Behind each of our cups hides an <span class="title--highlight">amazing surprise</span></p>
+      <div class="menu-tabs" role="tablist" aria-label="Menu categories">
+        <button 
+          type="button" 
+          role="tab" 
+          id="tab-coffee" 
+          aria-selected="true" 
+          aria-controls="panel-coffee"
+        >
+          <span aria-hidden="true"></span> Coffee
+        </button>
+        <button 
+          type="button" 
+          role="tab" 
+          id="tab-tea" 
+          aria-selected="false" 
+          aria-controls="panel-tea"
+          tabindex="-1"
+        >
+          <span aria-hidden="true"></span> Tea
+        </button>
+        <button 
+          type="button" 
+          role="tab" 
+          id="tab-dessert" 
+          aria-selected="false" 
+          aria-controls="panel-dessert"
+          tabindex="-1"
+        >
+          <span aria-hidden="true"></span> Dessert
+        </button>
+      </div>
+      <div role="tabpanel" id="panel-coffee" aria-labelledby="tab-coffee" tabindex="0">
+        <ul>
+          <li>
+            <article>
+              <img src="" alt="">
+              <h3>Irish coffee</h3>
+              <p>Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
+              <p><span class="visually-hidden">Price: </span>$7.00</p>
+            </article>
+          </li>
+          <li>
+            <article>
+              <img src="" alt="">
+              <h3>Kahlua coffee</h3>
+              <p>Classic coffee with milk and Kahlua liqueur under a cap of frothed milk</p>
+              <p><span class="visually-hidden">Price: </span>$7.00</p>
+            </article>
+          </li>
+          <li>
+            <article>
+              <img src="" alt="">
+              <h3>Honey raf</h3>
+              <p>Espresso with frothed milk, cream and aromatic honey</p>
+              <p><span class="visually-hidden">Price: </span>$7.00</p>
+            </article>
+          </li>
+          <li>
+            <article>
+              <img src="" alt="">
+              <h3>Ice cappuccino</h3>
+              <p>Cappuccino with soft thick foam in summer version with ice</p>
+              <p><span class="visually-hidden">Price: </span>$5.00</p>
+            </article>
+          </li>
+          <li>
+            <article>
+              <img src="" alt="">
+              <h3>Espresso</h3>
+              <p>Classic black coffee</p>
+              <p><span class="visually-hidden">Price: </span>$4.50</p>
+            </article>
+          </li>
+          <li>
+            <article>
+              <img src="" alt="">
+              <h3>Latte</h3>
+              <p>Espresso coffee with the addition of steamed milk and dense milk foam</p>
+              <p><span class="visually-hidden">Price: </span>$5.50</p>
+            </article>
+          </li>
+          <li>
+            <article>
+              <img src="" alt="">
+              <h3>Latte macchiato</h3>
+              <p>Espresso with frothed milk and chocolate</p>
+              <p><span class="visually-hidden">Price: </span>$5.50</p>
+            </article>
+          </li>
+          <li>
+            <article>
+              <img src="" alt="">
+              <h3>Coffee with cognac</h3>
+              <p>Fragrant black coffee with cognac and whipped creamEspresso with frothed milk and chocolate</p>
+              <p><span class="visually-hidden">Price: </span>$6.50</p>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer container">
+    <div class="footer__social">
+      <p class="title">Sip, Savor, Smile. <br><span class="title--highlight">It’s coffee time!</span></p>
+      <ul class="social-links">
+        <li class="social-links__item">
+          <a class="social-links__a" href="https://x.com/" aria-label="X (Twitter)">
+            <svg class="social-links__icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="social-links__path" d="M23 3.01006C23 3.01006 20.9821 4.20217 19.86 4.54006C19.2577 3.84757 18.4573 3.35675 17.567 3.13398C16.6767 2.91122 15.7395 2.96725 14.8821 3.29451C14.0247 3.62177 13.2884 4.20446 12.773 4.96377C12.2575 5.72309 11.9877 6.62239 12 7.54006V8.54006C10.2426 8.58562 8.50127 8.19587 6.93101 7.4055C5.36074 6.61513 4.01032 5.44869 3 4.01006C3 4.01006 -1 13.0101 8 17.0101C5.94053 18.408 3.48716 19.109 1 19.0101C10 24.0101 21 19.0101 21 7.51006C20.9991 7.23151 20.9723 6.95365 20.92 6.68006C21.9406 5.67355 23 3.01006 23 3.01006Z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </li>
+        <li class="social-links__item">
+          <a class="social-links__a" href="https://www.instagram.com/" aria-label="Instagram">
+            <svg class="social-links__icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="social-links__path" d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke-linecap="round" stroke-linejoin="round"/>
+              <path class="social-links__path" d="M3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16Z"/>
+              <path class="social-links__path" d="M17.5 6.51L17.51 6.49889" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </li>
+        <li class="social-links__item">
+          <a class="social-links__a" href="https://www.facebook.com/" aria-label="Facebook">
+            <svg class="social-links__icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="social-links__path" d="M17 2H14C12.6739 2 11.4021 2.52678 10.4645 3.46447C9.52678 4.40215 9 5.67392 9 7V10H6V14H9V22H13V14H16L17 10H13V7C13 6.73478 13.1054 6.48043 13.2929 6.29289C13.4804 6.10536 13.7348 6 14 6H17V2Z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <section class="footer__contact" id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title" class="footer__title">Contact us</h2>
+      <address class="footer-address">
+        <a 
+          class="footer-address__item footer-address__item--location"
+          href="https://www.google.com/maps/search/?api=1&query=8558+Green+Rd,+Los+Angeles,+CA"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          8558 Green Rd., LA
+        </a>
+        <a 
+          class="footer-address__item footer-address__item--tel" 
+          href="tel:+16035550123"
+        >
+          +1 (603) 555-0123
+        </a>
+      </address>
+      <p class="footer-time footer-address__item--time">Mon–Sat: 9:00–23:00</p>
+    </section>
+  </footer>
+</body>
+</html>

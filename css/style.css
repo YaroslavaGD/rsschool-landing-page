@@ -37,19 +37,22 @@
   --indent-icon-gap: 0.5rem;
   --indent-gap-small: 0.125rem;
 
+  /* Radius */
+  --radius-big: 6.25rem; /*100px*/
+  --radius-standard: 2.5rem; /*40px*/
+  --radius-half: 1.25rem; /*20px*/
+
+
   /* Components */
   --size-card: 30rem;
   --size-slider-button: 3.75rem;
   --size-dot-gap: 0.75rem; /*12px*/
   --size-dot-width: 2.5rem;
   --size-dot-height: 0.25rem;
-  --size-dot-radius: 6.25rem;
-  --size-button-radius: 6.25rem;
 
   --size-about-width: 41.25rem;
   --size-about-big-height: 36.875rem;
   --size-about-small-height: 26.875rem;
-  --size-about-radius: 1.25rem;
   --size-button-icon: 2.25rem;
 
   --max-width-button: 12.5rem;
@@ -143,7 +146,7 @@ body {
   border: none;
   padding: var(--indent-half) var(--indent-button);
   background-color: var(--bg-page);
-  border-radius: 6.25rem;
+  border-radius: var(--radius-big);
   line-height: var(--line-height-standard);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-regular);
@@ -177,7 +180,7 @@ body {
   background-image: url("../assets/img/img-hero.jpg");
   background-size: cover;
   background-position: center;
-  border-radius: 2.188rem;
+  border-radius: var(--radius-standard);
 }
 
 .hero__content {
@@ -304,7 +307,7 @@ body {
   bottom: 0;
   width: var(--size-dot-width);
   height: var(--size-dot-height);
-  border-radius: var(--size-dot-radius);
+  border-radius: var(--radius-big);
   background-color: var(--border-primary);
   transform: translate(-50%, 50%);
 }
@@ -339,7 +342,7 @@ body {
 .about__picture-wrapper {
   width: var(--size-about-width);
   overflow: hidden;
-  border-radius: var(--size-about-radius);
+  border-radius: var(--radius-half);
 }
 
 .about__picture-wrapper--big {
@@ -427,7 +430,7 @@ body {
   padding: var(--indent-button-small);
   padding-left: calc(var(--indent-half) + var(--size-button-icon) + var(--indent-icon-gap));
   border: 1px solid var(--border-inverse);
-  border-radius: var(--size-button-radius);
+  border-radius: var(--radius-big);
   text-decoration: none;
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-standard);
@@ -444,4 +447,21 @@ body {
 .mobile__link-text--small {
   font-size: var(--font-size-small);
   line-height: var(--line-height-button-small);
+}
+
+/* footer */
+.footer {
+  display: flex;
+  background-color: var(--bg-container);
+  margin-bottom: var(--indent-standard);
+  padding: var(--indent-section);
+  border-radius: var(--radius-standard);
+}
+
+.footer__social {
+  order: 0;
+}
+
+.footer__contact {
+  order: 1;
 }

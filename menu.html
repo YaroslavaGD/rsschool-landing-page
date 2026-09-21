@@ -33,18 +33,20 @@
   <main class="main container">
     <div class="section">
       <h1 class="visually-hidden">Menu</h1>
-      <p class="title">Behind each of our cups hides an <span class="title--highlight">amazing surprise</span></p>
+      <p class="title title--menu">Behind each of our cups hides an <span class="title--highlight">amazing surprise</span></p>
       <div class="menu-tabs" role="tablist" aria-label="Menu categories">
         <button 
+          class="menu-tabs__item"
           type="button" 
           role="tab" 
           id="tab-coffee" 
           aria-selected="true" 
           aria-controls="panel-coffee"
         >
-          <span aria-hidden="true"></span> Coffee
+          <img class="menu-tabs__icon" aria-hidden="true" src="assets/img/icons/coffee.svg" alt=""> <span class="menu-tabs__text">Coffee<span>
         </button>
         <button 
+          class="menu-tabs__item"
           type="button" 
           role="tab" 
           id="tab-tea" 
@@ -52,9 +54,10 @@
           aria-controls="panel-tea"
           tabindex="-1"
         >
-          <span aria-hidden="true"></span> Tea
+          <img class="menu-tabs__icon" aria-hidden="true" src="assets/img/icons/teapot.svg" alt=""> <span class="menu-tabs__text">Tea</span>
         </button>
         <button 
+          class="menu-tabs__item"
           type="button" 
           role="tab" 
           id="tab-dessert" 
@@ -62,14 +65,14 @@
           aria-controls="panel-dessert"
           tabindex="-1"
         >
-          <span aria-hidden="true"></span> Dessert
+          <img class="menu-tabs__icon" aria-hidden="true" src="assets/img/icons/cake.svg" alt=""> <span class="menu-tabs__text">Dessert</span>
         </button>
       </div>
       <div role="tabpanel" id="panel-coffee" aria-labelledby="tab-coffee" tabindex="0">
-        <ul>
-          <li>
-            <article>
-              <img src="" alt="">
+        <ul class="card-list">
+          <li class="card-list__item">
+            <article class="card">
+              <div class="card__picture-wrapper">
                 <picture class="card__picture">
                   <source 
                     srcset="assets/img/menu/coffee-1-340.webp 1x, assets/img/menu/coffee-1.webp 2x" 
@@ -81,13 +84,30 @@
                   <!-- fallback -->
                   <img class="card__img" src="assets/img/menu/coffee-1-340.jpg" alt="" loading="lazy">
                 </picture>
-              <h3>Irish coffee</h3>
-              <p>Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
-              <p><span class="visually-hidden">Price: </span>$7.00</p>
+              </div>
+              <div class="card__content">
+                <h3 class="card__title">
+                  <button
+                    class="card__button"
+                    type="button"
+                    aria-haspopup="dialog"
+                    aria-describedby="coffee-1-desc coffee-1-price"
+                  >
+                    Irish coffee
+                  </button>
+                </h3>
+                <p class="card__description" id="coffee-1-desc">
+                  Fragrant black coffee with Jameson Irish whiskey and whipped milk
+                </p>
+                <p class="card__price" id="coffee-1-price">
+                  <span class="visually-hidden">Price: </span>$7.00
+                </p>
+              </div>
             </article>
           </li>
-          <li>
-            <article>
+          <li class="card-list__item">
+            <article class="card">
+              <div class="card__picture-wrapper">
                 <picture class="card__picture">
                   <source 
                     srcset="assets/img/menu/coffee-2-340.webp 1x, assets/img/menu/coffee-2.webp 2x" 
@@ -99,13 +119,30 @@
                   <!-- fallback -->
                   <img class="card__img" src="assets/img/menu/coffee-2-340.jpg" alt="" loading="lazy">
                 </picture>
-              <h3>Kahlua coffee</h3>
-              <p>Classic coffee with milk and Kahlua liqueur under a cap of frothed milk</p>
-              <p><span class="visually-hidden">Price: </span>$7.00</p>
+              </div>
+              <div class="card__content">
+                <h3 class="card__title">
+                  <button
+                    class="card__button"
+                    type="button"
+                    aria-haspopup="dialog"
+                    aria-describedby="coffee-2-desc coffee-2-price"
+                  >
+                    Kahlua coffee
+                  </button>
+                </h3>
+                <p class="card__description" id="coffee-2-desc">
+                  Classic coffee with milk and Kahlua liqueur under a cap of frothed milk
+                </p>
+                <p class="card__price" id="coffee-2-price">
+                  <span class="visually-hidden">Price: </span>$7.00
+                </p>
+              </div>
             </article>
           </li>
-          <li>
-            <article>
+          <li class="card-list__item">
+            <article class="card">
+              <div class="card__picture-wrapper">
                 <picture class="card__picture">
                   <source 
                     srcset="assets/img/menu/coffee-3-340.webp 1x, assets/img/menu/coffee-3.webp 2x" 
@@ -117,13 +154,30 @@
                   <!-- fallback -->
                   <img class="card__img" src="assets/img/menu/coffee-3-340.jpg" alt="" loading="lazy">
                 </picture>
-              <h3>Honey raf</h3>
-              <p>Espresso with frothed milk, cream and aromatic honey</p>
-              <p><span class="visually-hidden">Price: </span>$7.00</p>
+              </div>
+              <div class="card__content">
+                <h3 class="card__title">
+                  <button
+                    class="card__button"
+                    type="button"
+                    aria-haspopup="dialog"
+                    aria-describedby="coffee-3-desc coffee-3-price"
+                  >
+                    Honey raf
+                  </button>
+                </h3>
+                <p class="card__description" id="coffee-3-desc">
+                  Espresso with frothed milk, cream and aromatic honey
+                </p>
+                <p class="card__price" id="coffee-3-price">
+                  <span class="visually-hidden">Price: </span>$5.50
+                </p>
+              </div>
             </article>
           </li>
-          <li>
-            <article>
+          <li class="card-list__item">
+            <article class="card">
+              <div class="card__picture-wrapper">
                 <picture class="card__picture">
                   <source 
                     srcset="assets/img/menu/coffee-4-340.webp 1x, assets/img/menu/coffee-4.webp 2x" 
@@ -135,13 +189,30 @@
                   <!-- fallback -->
                   <img class="card__img" src="assets/img/menu/coffee-4-340.jpg" alt="" loading="lazy">
                 </picture>
-              <h3>Ice cappuccino</h3>
-              <p>Cappuccino with soft thick foam in summer version with ice</p>
-              <p><span class="visually-hidden">Price: </span>$5.00</p>
+              </div>
+              <div class="card__content">
+                <h3 class="card__title">
+                  <button
+                    class="card__button"
+                    type="button"
+                    aria-haspopup="dialog"
+                    aria-describedby="coffee-4-desc coffee-4-price"
+                  >
+                    Ice cappuccino
+                  </button>
+                </h3>
+                <p class="card__description" id="coffee-4-desc">
+                  Cappuccino with soft thick foam in summer version with ice
+                </p>
+                <p class="card__price" id="coffee-4-price">
+                  <span class="visually-hidden">Price: </span>$5.00
+                </p>
+              </div>
             </article>
           </li>
-          <li>
-            <article>
+          <li class="card-list__item">
+            <article class="card">
+              <div class="card__picture-wrapper">
                 <picture class="card__picture">
                   <source 
                     srcset="assets/img/menu/coffee-5-340.webp 1x, assets/img/menu/coffee-5.webp 2x" 
@@ -153,13 +224,30 @@
                   <!-- fallback -->
                   <img class="card__img" src="assets/img/menu/coffee-5-340.jpg" alt="" loading="lazy">
                 </picture>
-              <h3>Espresso</h3>
-              <p>Classic black coffee</p>
-              <p><span class="visually-hidden">Price: </span>$4.50</p>
+              </div>
+              <div class="card__content">
+                <h3 class="card__title">
+                  <button
+                    class="card__button"
+                    type="button"
+                    aria-haspopup="dialog"
+                    aria-describedby="coffee-5-desc coffee-5-price"
+                  >
+                    Espresso
+                  </button>
+                </h3>
+                <p class="card__description" id="coffee-5-desc">
+                  Classic black coffee
+                </p>
+                <p class="card__price" id="coffee-5-price">
+                  <span class="visually-hidden">Price: </span>$4.50
+                </p>
+              </div>
             </article>
           </li>
-          <li>
-            <article>
+          <li class="card-list__item">
+            <article class="card">
+              <div class="card__picture-wrapper">
                 <picture class="card__picture">
                   <source 
                     srcset="assets/img/menu/coffee-6-340.webp 1x, assets/img/menu/coffee-6.webp 2x" 
@@ -171,13 +259,30 @@
                   <!-- fallback -->
                   <img class="card__img" src="assets/img/menu/coffee-6-340.jpg" alt="" loading="lazy">
                 </picture>
-              <h3>Latte</h3>
-              <p>Espresso coffee with the addition of steamed milk and dense milk foam</p>
-              <p><span class="visually-hidden">Price: </span>$5.50</p>
+              </div>
+              <div class="card__content">
+                <h3 class="card__title">
+                  <button
+                    class="card__button"
+                    type="button"
+                    aria-haspopup="dialog"
+                    aria-describedby="coffee-6-desc coffee-6-price"
+                  >
+                    Latte
+                  </button>
+                </h3>
+                <p class="card__description" id="coffee-6-desc">
+                  Espresso coffee with the addition of steamed milk and dense milk foam
+                </p>
+                <p class="card__price" id="coffee-6-price">
+                  <span class="visually-hidden">Price: </span>$5.50
+                </p>
+              </div>
             </article>
           </li>
-          <li>
-            <article>
+          <li class="card-list__item">
+            <article class="card">
+              <div class="card__picture-wrapper">
                 <picture class="card__picture">
                   <source 
                     srcset="assets/img/menu/coffee-7-340.webp 1x, assets/img/menu/coffee-7.webp 2x" 
@@ -189,13 +294,30 @@
                   <!-- fallback -->
                   <img class="card__img" src="assets/img/menu/coffee-7-340.jpg" alt="" loading="lazy">
                 </picture>
-              <h3>Latte macchiato</h3>
-              <p>Espresso with frothed milk and chocolate</p>
-              <p><span class="visually-hidden">Price: </span>$5.50</p>
+              </div>
+              <div class="card__content">
+                <h3 class="card__title">
+                  <button
+                    class="card__button"
+                    type="button"
+                    aria-haspopup="dialog"
+                    aria-describedby="coffee-7-desc coffee-7-price"
+                  >
+                    Latte macchiato
+                  </button>
+                </h3>
+                <p class="card__description" id="coffee-7-desc">
+                  Espresso with frothed milk and chocolate
+                </p>
+                <p class="card__price" id="coffee-7-price">
+                  <span class="visually-hidden">Price: </span>$5.50
+                </p>
+              </div>
             </article>
           </li>
-          <li>
-            <article>
+          <li class="card-list__item">
+            <article class="card">
+              <div class="card__picture-wrapper">
                 <picture class="card__picture">
                   <source 
                     srcset="assets/img/menu/coffee-8-340.webp 1x, assets/img/menu/coffee-8.webp 2x" 
@@ -207,9 +329,25 @@
                   <!-- fallback -->
                   <img class="card__img" src="assets/img/menu/coffee-8-340.jpg" alt="" loading="lazy">
                 </picture>
-              <h3>Coffee with cognac</h3>
-              <p>Fragrant black coffee with cognac and whipped creamEspresso with frothed milk and chocolate</p>
-              <p><span class="visually-hidden">Price: </span>$6.50</p>
+              </div>
+              <div class="card__content">
+                <h3 class="card__title">
+                  <button
+                    class="card__button"
+                    type="button"
+                    aria-haspopup="dialog"
+                    aria-describedby="coffee-8-desc coffee-8-price"
+                  >
+                    Coffee with cognac
+                  </button>
+                </h3>
+                <p class="card__description" id="coffee-8-desc">
+                  Fragrant black coffee with cognac and whipped cream
+                </p>
+                <p class="card__price" id="coffee-8-price">
+                  <span class="visually-hidden">Price: </span>$6.50
+                </p>
+              </div>
             </article>
           </li>
         </ul>

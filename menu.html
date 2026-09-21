@@ -13,8 +13,9 @@
 </head>
 <body>
   <header class="header container">
-    <a href="/" aria-label="Resource - Home" class="header__logo">
-      <img src="assets/img/logo.svg" alt="">
+    <a class="header__logo" href="/" aria-label="Resource - Home">
+      <img class="header__logo-img header__logo-img--light" aria-hidden="true" src="assets/img/logo.svg" alt="">
+      <img class="header__logo-img header__logo-img--dark" aria-hidden="true" src="assets/img/logo-dark.svg" alt="">
     </a>
     <nav class="nav" aria-label="Main">
       <ul class="nav__list">
@@ -447,5 +448,6 @@
       <p class="footer-time footer-address__item--time">Mon–Sat: 9:00–23:00</p>
     </section>
   </footer>
+  <script type="module" src="scripts/index.js"></script>
 </body>
 </html>

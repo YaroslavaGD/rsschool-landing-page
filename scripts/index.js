@@ -1,0 +1,11 @@
+import { theme } from './theme.js';
+
+const themeSwitch = document.querySelector('.theme-switch');
+
+function installTheme(currentTheme) {
+  themeSwitch.setAttribute('aria-checked', String(currentTheme === 'dark'));
+}
+
+installTheme(theme.get());
+theme.addEventListener('change', (e) => installTheme(e.detail.theme));
+themeSwitch.addEventListener('click', () => theme.toggle());

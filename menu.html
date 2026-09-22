@@ -3,7 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <script>
+    (function () {
+      try {
+        const stored = localStorage.getItem('theme');
+        const systemPrefers = matchMedia('(prefers-color-scheme: dark)'). matches ? 'dark' : 'light';
+        const theme = stored === 'dark' || stored === 'light' ? stored : systemPrefers;
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
   <link rel="shortcut icon" href="assets/img/logo-dark.svg" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +22,7 @@
 </head>
 <body>
   <header class="header container">
-    <a class="header__logo" href="/" aria-label="Resource - Home">
+    <a class="header__logo" href="index.html" aria-label="Resource - Home">
       <img class="header__logo-img header__logo-img--light" aria-hidden="true" src="assets/img/logo.svg" alt="">
       <img class="header__logo-img header__logo-img--dark" aria-hidden="true" src="assets/img/logo-dark.svg" alt="">
     </a>
@@ -448,6 +457,7 @@
       <p class="footer-time footer-address__item--time">Mon–Sat: 9:00–23:00</p>
     </section>
   </footer>
+  <script type="module" src="scripts/theme.js"></script>
   <script type="module" src="scripts/index.js"></script>
 </body>
 </html>

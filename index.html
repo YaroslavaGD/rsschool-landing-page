@@ -47,17 +47,17 @@
       </ul>
     </nav>
     <div class="header__actions">
-      <button id="theme-switch" class="theme-switch" type="button" role="switch" aria-checked="false" class="theme-toggle" aria-label="Switch theme">
-        <div class="theme-switch__icon-wrapper theme-switch__icon-wrapper--light">
+      <button id="theme-switch" class="theme-switch" type="button" role="switch" aria-checked="false" aria-label="Switch theme">
+        <span class="theme-switch__icon-wrapper theme-switch__icon-wrapper--light">
           <svg class="theme-switch__icon" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path class="theme-switch__path" d="M10 3V1C10 0.45 10.45 0 11 0C11.55 0 12 0.45 12 1V3C12 3.55 11.55 4 11 4C10.45 4 10 3.55 10 3ZM17.36 6.05L18.77 4.63C19.16 4.24 19.16 3.61 18.77 3.22C18.38 2.83 17.75 2.83 17.36 3.22L15.95 4.64C15.56 5.03 15.56 5.66 15.95 6.05C16.34 6.44 16.97 6.44 17.36 6.05ZM21 10H19C18.45 10 18 10.45 18 11C18 11.55 18.45 12 19 12H21C21.55 12 22 11.55 22 11C22 10.45 21.55 10 21 10ZM11 18C10.45 18 10 18.45 10 19V21C10 21.55 10.45 22 11 22C11.55 22 12 21.55 12 21V19C12 18.45 11.55 18 11 18ZM4.64 6.05L3.22 4.64C2.83 4.25 2.83 3.61 3.22 3.23C3.61 2.85 4.25 2.84 4.63 3.23L6.04 4.64C6.43 5.03 6.43 5.67 6.04 6.05C5.65 6.43 5.02 6.44 4.64 6.05ZM15.95 15.95C15.56 16.34 15.56 16.98 15.95 17.36L17.36 18.77C17.75 19.16 18.39 19.16 18.77 18.77C19.16 18.38 19.16 17.74 18.77 17.36L17.36 15.95C16.98 15.56 16.34 15.56 15.95 15.95ZM1 12H3C3.55 12 4 11.55 4 11C4 10.45 3.55 10 3 10H1C0.45 10 0 10.45 0 11C0 11.55 0.45 12 1 12ZM4.64 18.78L6.05 17.37C6.44 16.98 6.44 16.34 6.05 15.96C5.66 15.58 5.02 15.57 4.64 15.96L3.23 17.37C2.84 17.76 2.84 18.4 3.23 18.78C3.61 19.17 4.25 19.17 4.64 18.78ZM11 5C7.69 5 5 7.69 5 11C5 14.31 7.69 17 11 17C14.31 17 17 14.31 17 11C17 7.69 14.31 5 11 5Z"/>
           </svg>
-        </div>
-        <div class="theme-switch__icon-wrapper theme-switch__icon-wrapper--dark">
+        </span>
+        <span class="theme-switch__icon-wrapper theme-switch__icon-wrapper--dark">
           <svg class="theme-switch__icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path class="theme-switch__path" d="M9 0C4.03 0 0 4.03 0 9C0 13.97 4.03 18 9 18C13.97 18 18 13.97 18 9C18 8.54 17.96 8.08 17.9 7.64C16.92 9.01 15.32 9.9 13.5 9.9C10.52 9.9 8.1 7.48 8.1 4.5C8.1 2.69 8.99 1.08 10.36 0.0999999C9.92 0.0399999 9.46 0 9 0Z"/>
           </svg>
-        </div>
+        </span>
       </button>
       <a class="nav__link menu menu--desktop" href="menu.html">
         <span class="menu__text">Menu</span>
@@ -113,7 +113,7 @@
       <h2 id="coffee-title" class="title">Choose your <span class="title--highlight">favorite</span> coffee</h2>
       <div class="slider" role="group" aria-roledescription="carousel" aria-label="Favorite coffee">
         <div class="slider-track" aria-live="polite">
-          <article class="slider-card" role="group" aria-roledescription="slide" aria-label="1 of 3">
+          <div class="slider-card" role="group" aria-roledescription="slide" aria-label="1 of 3">
             <div class="slider-card__image-wrapper">
               <picture class="slider-card__picture">
                 <!-- desktop-tablet -->
@@ -146,7 +146,7 @@
               with brown sugar and cinnamon before being topped with oat milk.
             </p>
             <span class="slider-card__price">$5.50</span>
-          </article>
+          </div>
         </div>
         <div class="slider-nav">
           <button type="button" class="slider-nav__button slider-nav__button--left" aria-label="Previous coffee">
@@ -161,9 +161,9 @@
           </button>
         </div>
         <div class="slider-dots" role="group" aria-label="Choose coffee">
-          <button type="button" class="slider-dot" type="button" aria-label="Show S’mores Frappuccino" aria-current="true"></button>
-          <button type="button" class="slider-dot" type="button" aria-label="Show Caramel Macchiato"></button>
-          <button type="button" class="slider-dot" type="button" aria-label="Show Ice coffee"></button>
+          <button class="slider-dot" type="button" aria-label="Show S’mores Frappuccino" aria-current="true"></button>
+          <button class="slider-dot" type="button" aria-label="Show Caramel Macchiato"></button>
+          <button class="slider-dot" type="button" aria-label="Show Ice coffee"></button>
         </div>
       </div>
     </section>

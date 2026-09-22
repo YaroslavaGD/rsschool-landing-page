@@ -76,8 +76,8 @@
         aria-label="Open menu"
       >
       <span class="burger__box" aria-hidden="true">
-        <span class="burger__line"></span>
-        <span class="burger__line"></span>
+        <span class="burger__line burger__line--top"></span>
+        <span class="burger__line burger__line--bottom"></span>
       </span>
     </button>
     </div>
@@ -110,7 +110,7 @@
     </section>
 
     <section id="coffee" class="coffee section" aria-labelledby="coffee-title" >
-      <h2 id="coffee-title" class="title">Choose your <span class="title--highlight">favorite</span> coffee</h2>
+      <h2 id="coffee-title" class="title coffee__title">Choose your <span class="title--highlight">favorite</span> coffee</h2>
       <div class="slider" role="group" aria-roledescription="carousel" aria-label="Favorite coffee">
         <div class="slider-track" aria-live="polite">
           <div class="slider-card" role="group" aria-roledescription="slide" aria-label="1 of 3">
@@ -120,21 +120,21 @@
                 <source 
                   srcset="assets/img/slider/coffee-1-480.webp 1x, assets/img/slider/coffee-1-960.webp 2x" 
                   type="image/webp" 
-                  media="(min-width: 768px)">
+                  media="(min-width: 681px)">
                 <source 
                   srcset="assets/img/slider/coffee-1-480.png 1x, assets/img/slider/coffee-1-960.png 2x" 
                   type="image/png" 
-                  media="(min-width: 768px)">
+                  media="(min-width: 681px)">
 
                 <!-- mobile -->
                 <source 
                   srcset="assets/img/slider/coffee-1-348.webp 1x, assets/img/slider/coffee-1-696.webp 2x" 
                   type="image/webp" 
-                  media="(max-width: 767px)">
+                  media="(max-width: 680px)">
                 <source 
                   srcset="assets/img/slider/coffee-1-348.png 1x, assets/img/slider/coffee-1-696.png 2x" 
                   type="image/png" 
-                  media="(max-width: 767px)">
+                  media="(max-width: 680px)">
 
                 <!-- fallback -->
                 <img class="slider-card__img" src="assets/img/slider/coffee-1-348.png" alt="Iced frappuccino in a tall glass with whipped foam" loading="lazy">
@@ -178,21 +178,21 @@
             <source 
               srcset="assets/img/about/about-1-726.webp 1x, assets/img/about/about-1-1452.webp 2x" 
               type="image/webp" 
-              media="(min-width: 768px)">
+              media="(min-width: 681px)">
             <source 
               srcset="assets/img/about/about-1-726.jpg 1x, assets/img/about/about-1-1452.jpg 2x" 
               type="image/jpeg" 
-              media="(min-width: 768px)">
+              media="(min-width: 681px)">
   
             <!-- mobile -->
             <source 
               srcset="assets/img/about/about-1-688.webp 1x, assets/img/about/about-1-1376.webp 2x" 
               type="image/webp" 
-              media="(max-width: 767px)">
+              media="(max-width: 680px)">
             <source 
               srcset="assets/img/about/about-1-688.jpg 1x, assets/img/about/about-1-1376.jpg 2x" 
               type="image/jpeg" 
-              media="(max-width: 767px)">
+              media="(max-width: 680px)">
   
             <!-- fallback -->
             <img class="about__img" src="assets/img/about/about-1-688.jpg" alt="" loading="lazy">
@@ -203,7 +203,7 @@
           <picture class="about__picture">
             <!-- mobile -->
             <source
-              media="(max-width: 767px)"
+              media="(max-width: 680px)"
               srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
 
             <!-- desktop-tablet -->
@@ -223,7 +223,7 @@
           <picture class="about__picture">
             <!-- mobile -->
             <source
-              media="(max-width: 767px)"
+              media="(max-width: 680px)"
               srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
               
             <!-- desktop-tablet -->
@@ -245,21 +245,21 @@
             <source 
               srcset="assets/img/about/about-4-726.webp 1x, assets/img/about/about-4-1452.webp 2x" 
               type="image/webp" 
-              media="(min-width: 768px)">
+              media="(min-width: 681px)">
             <source 
               srcset="assets/img/about/about-4-726.jpg 1x, assets/img/about/about-4-1452.jpg 2x" 
               type="image/jpeg" 
-              media="(min-width: 768px)">
+              media="(min-width: 681px)">
   
             <!-- mobile -->
             <source 
               srcset="assets/img/about/about-4-688.webp 1x, assets/img/about/about-4-1376.webp 2x" 
               type="image/webp" 
-              media="(max-width: 767px)">
+              media="(max-width: 680px)">
             <source 
               srcset="assets/img/about/about-4-688.jpg 1x, assets/img/about/about-4-1376.jpg 2x" 
               type="image/jpeg" 
-              media="(max-width: 767px)">
+              media="(max-width: 680px)">
   
             <!-- fallback -->
             <img class="about__img" src="assets/img/about/about-4-660.jpg" alt="" loading="lazy">
@@ -270,7 +270,7 @@
 
     <section id="mobile" class="section mobile" aria-labelledby="mobile-title">
       <div class="mobile__content">
-        <h2 id="mobile-title" class="title"><span class="title--highlight">Download</span> our app<br> to start ordering</h2>
+        <h2 id="mobile-title" class="title mobile__title"><span class="title--highlight">Download</span> our app to start ordering</h2>
         <p class="mobile__description">Download the Resource app today and experience the comfort of ordering your favorite coffee from whenever you are</p>
         <ul class="mobile__links">
           <li class="mobile__link-container">
@@ -302,21 +302,21 @@
         <source 
           srcset="assets/img/mobile/screens-630.webp 1x, assets/img/mobile/screens-1260.webp 2x" 
           type="image/webp" 
-          media="(min-width: 768px)">
+          media="(min-width: 681px)">
         <source 
           srcset="assets/img/mobile/screens-630.jpg 1x, assets/img/mobile/screens-1260.jpg 2x" 
           type="image/jpeg" 
-          media="(min-width: 768px)">
+          media="(min-width: 681px)">
 
         <!-- mobile -->
         <source 
           srcset="assets/img/mobile/screens-348.webp 1x, assets/img/mobile/screens-696.webp 2x" 
           type="image/webp" 
-          media="(max-width: 767px)">
+          media="(max-width: 680px)">
         <source 
           srcset="assets/img/mobile/screens-348.jpg 1x, assets/img/mobile/screens-696.jpg 2x" 
           type="image/jpeg" 
-          media="(max-width: 767px)">
+          media="(max-width: 680px)">
 
         <!-- fallback -->
         <img aria-hidden="true" class="mobile__img" src="assets/img/mobile/screens-348.png" alt="" loading="lazy">

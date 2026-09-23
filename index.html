@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en" class="page" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      try {
+        const stored = localStorage.getItem('theme');
+        const systemPrefers = matchMedia('(prefers-color-scheme: dark)'). matches ? 'dark' : 'light';
+        const theme = stored === 'dark' || stored === 'light' ? stored : systemPrefers;
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+      document.documentElement.classList.add('no-transition');
+      window.addEventListener('load', () => {
+        requestAnimationFrame(() => {
+          document.documentElement.classList.remove('no-transition');
+        });
+      });
+    })();
+  </script>
+  <link rel="shortcut icon" href="assets/img/logo-dark.svg" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Coffee House</title>
+</head>
+<body>
+  <header class="header container">
+    <a class="header__logo" href="index.html" aria-label="Resource - Home">
+      <img class="header__logo-img header__logo-img--light" aria-hidden="true" src="assets/img/logo.svg" alt="">
+      <img class="header__logo-img header__logo-img--dark" aria-hidden="true" src="assets/img/logo-dark.svg" alt="">
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul class="nav__list">
+        <li class="nav__item"><a class="nav__link" href="#coffee">Favorite coffee</a></li>
+        <li class="nav__item"><a class="nav__link" href="#about">About</a></li>
+        <li class="nav__item"><a class="nav__link" href="#mobile">Mobile app</a></li>
+        <li class="nav__item"><a class="nav__link" href="#contact">Contact us</a></li>
+        <li class="nav__item nav__item--last">
+          <a class="nav__link menu menu--mobile" href="menu.html">
+            <span class="menu__text">Menu</span>
+            <svg class="menu__icon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="menu__path" d="M14.167 9.76667V11.6667C14.167 14.8883 11.5553 17.5 8.33366 17.5C5.112 17.5 2.50033 14.8883 2.50033 11.6667V9.76667C2.50033 9.4353 2.76896 9.16667 3.10033 9.16667H13.567C13.8984 9.16667 14.167 9.4353 14.167 9.76667Z" stroke="#403F3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path class="menu__path" d="M10.0003 7.50008C10.0003 6.66675 10.5956 5.83341 11.786 5.83341C13.101 5.83341 14.167 4.76743 14.167 3.45246V2.91675" stroke="#403F3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path class="menu__path" d="M6.66634 7.5V7.08333C6.66634 5.70262 7.78563 4.58333 9.16634 4.58333C10.0868 4.58333 10.833 3.83714 10.833 2.91667V2.5" stroke="#403F3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path class="menu__path" d="M13.333 9.16675H15.4163C16.5669 9.16675 17.4997 10.0995 17.4997 11.2501C17.4997 12.4007 16.5669 13.3334 15.4163 13.3334H14.1663" stroke="#403F3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="header__actions">
+      <button id="theme-switch" class="theme-switch" type="button" role="switch" aria-checked="false" aria-label="Switch theme">
+        <span class="theme-switch__icon-wrapper theme-switch__icon-wrapper--light">
+          <svg class="theme-switch__icon" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="theme-switch__path" d="M10 3V1C10 0.45 10.45 0 11 0C11.55 0 12 0.45 12 1V3C12 3.55 11.55 4 11 4C10.45 4 10 3.55 10 3ZM17.36 6.05L18.77 4.63C19.16 4.24 19.16 3.61 18.77 3.22C18.38 2.83 17.75 2.83 17.36 3.22L15.95 4.64C15.56 5.03 15.56 5.66 15.95 6.05C16.34 6.44 16.97 6.44 17.36 6.05ZM21 10H19C18.45 10 18 10.45 18 11C18 11.55 18.45 12 19 12H21C21.55 12 22 11.55 22 11C22 10.45 21.55 10 21 10ZM11 18C10.45 18 10 18.45 10 19V21C10 21.55 10.45 22 11 22C11.55 22 12 21.55 12 21V19C12 18.45 11.55 18 11 18ZM4.64 6.05L3.22 4.64C2.83 4.25 2.83 3.61 3.22 3.23C3.61 2.85 4.25 2.84 4.63 3.23L6.04 4.64C6.43 5.03 6.43 5.67 6.04 6.05C5.65 6.43 5.02 6.44 4.64 6.05ZM15.95 15.95C15.56 16.34 15.56 16.98 15.95 17.36L17.36 18.77C17.75 19.16 18.39 19.16 18.77 18.77C19.16 18.38 19.16 17.74 18.77 17.36L17.36 15.95C16.98 15.56 16.34 15.56 15.95 15.95ZM1 12H3C3.55 12 4 11.55 4 11C4 10.45 3.55 10 3 10H1C0.45 10 0 10.45 0 11C0 11.55 0.45 12 1 12ZM4.64 18.78L6.05 17.37C6.44 16.98 6.44 16.34 6.05 15.96C5.66 15.58 5.02 15.57 4.64 15.96L3.23 17.37C2.84 17.76 2.84 18.4 3.23 18.78C3.61 19.17 4.25 19.17 4.64 18.78ZM11 5C7.69 5 5 7.69 5 11C5 14.31 7.69 17 11 17C14.31 17 17 14.31 17 11C17 7.69 14.31 5 11 5Z"/>
+          </svg>
+        </span>
+        <span class="theme-switch__icon-wrapper theme-switch__icon-wrapper--dark">
+          <svg class="theme-switch__icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="theme-switch__path" d="M9 0C4.03 0 0 4.03 0 9C0 13.97 4.03 18 9 18C13.97 18 18 13.97 18 9C18 8.54 17.96 8.08 17.9 7.64C16.92 9.01 15.32 9.9 13.5 9.9C10.52 9.9 8.1 7.48 8.1 4.5C8.1 2.69 8.99 1.08 10.36 0.0999999C9.92 0.0399999 9.46 0 9 0Z"/>
+          </svg>
+        </span>
+      </button>
+      <a class="nav__link menu menu--desktop" href="menu.html">
+        <span class="menu__text">Menu</span>
+        <svg class="menu__icon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="menu__path" d="M14.167 9.76667V11.6667C14.167 14.8883 11.5553 17.5 8.33366 17.5C5.112 17.5 2.50033 14.8883 2.50033 11.6667V9.76667C2.50033 9.4353 2.76896 9.16667 3.10033 9.16667H13.567C13.8984 9.16667 14.167 9.4353 14.167 9.76667Z" stroke="#403F3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path class="menu__path" d="M10.0003 7.50008C10.0003 6.66675 10.5956 5.83341 11.786 5.83341C13.101 5.83341 14.167 4.76743 14.167 3.45246V2.91675" stroke="#403F3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path class="menu__path" d="M6.66634 7.5V7.08333C6.66634 5.70262 7.78563 4.58333 9.16634 4.58333C10.0868 4.58333 10.833 3.83714 10.833 2.91667V2.5" stroke="#403F3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path class="menu__path" d="M13.333 9.16675H15.4163C16.5669 9.16675 17.4997 10.0995 17.4997 11.2501C17.4997 12.4007 16.5669 13.3334 15.4163 13.3334H14.1663" stroke="#403F3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <button
+        class="burger"
+        type="button"
+        aria-expanded="false"
+        aria-controls="main-nav"
+        aria-label="Open menu"
+      >
+      <span class="burger__box" aria-hidden="true">
+        <span class="burger__line burger__line--top"></span>
+        <span class="burger__line burger__line--bottom"></span>
+      </span>
+    </button>
+    </div>
+  </header>
+
+  <main class="main container">
+    <section class="hero section" aria-labelledby="hero-title">
+      <div class="hero__content">
+        <h1 id="hero-title" class="hero__title">
+          <span class="hero__title--highlight">Enjoy</span> premium coffee at our charming cafe
+        </h1>
+        <p class="hero__description">
+          With its inviting atmosphere and delicious coffee options, 
+          the Coffee House Resource is popular destination for coffee lovers 
+          and those seeking a warm and inviting space 
+          to enjoy their favorite beverage.
+        </p>
+        <a href="menu.html" class="button button-hero">
+          <span class="button-hero__wrapper">
+            <span class="button-hero__text">Menu</span>
+            <svg class="button-hero__icon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="button-hero__path" d="M14.167 9.76667V11.6667C14.167 14.8883 11.5553 17.5 8.33366 17.5C5.112 17.5 2.50033 14.8883 2.50033 11.6667V9.76667C2.50033 9.4353 2.76896 9.16667 3.10033 9.16667H13.567C13.8984 9.16667 14.167 9.4353 14.167 9.76667Z" stroke="#403F3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path class="button-hero__path" d="M10.0003 7.50008C10.0003 6.66675 10.5956 5.83341 11.786 5.83341C13.101 5.83341 14.167 4.76743 14.167 3.45246V2.91675" stroke="#403F3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path class="button-hero__path" d="M6.66634 7.5V7.08333C6.66634 5.70262 7.78563 4.58333 9.16634 4.58333C10.0868 4.58333 10.833 3.83714 10.833 2.91667V2.5" stroke="#403F3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path class="button-hero__path" d="M13.333 9.16675H15.4163C16.5669 9.16675 17.4997 10.0995 17.4997 11.2501C17.4997 12.4007 16.5669 13.3334 15.4163 13.3334H14.1663" stroke="#403F3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <section id="coffee" class="coffee section" aria-labelledby="coffee-title" >
+      <h2 id="coffee-title" class="title coffee__title">Choose your <span class="title--highlight">favorite</span> coffee</h2>
+      <div class="slider" role="group" aria-roledescription="carousel" aria-label="Favorite coffee">
+        <div class="slider-track" aria-live="polite">
+          <div class="slider-card" role="group" aria-roledescription="slide" aria-label="1 of 3">
+            <div class="slider-card__image-wrapper">
+              <picture class="slider-card__picture">
+                <!-- desktop-tablet -->
+                <source 
+                  srcset="assets/img/slider/coffee-1-480.webp 1x, assets/img/slider/coffee-1-960.webp 2x" 
+                  type="image/webp" 
+                  media="(min-width: 681px)">
+                <source 
+                  srcset="assets/img/slider/coffee-1-480.png 1x, assets/img/slider/coffee-1-960.png 2x" 
+                  type="image/png" 
+                  media="(min-width: 681px)">
+
+                <!-- mobile -->
+                <source 
+                  srcset="assets/img/slider/coffee-1-348.webp 1x, assets/img/slider/coffee-1-696.webp 2x" 
+                  type="image/webp" 
+                  media="(max-width: 680px)">
+                <source 
+                  srcset="assets/img/slider/coffee-1-348.png 1x, assets/img/slider/coffee-1-696.png 2x" 
+                  type="image/png" 
+                  media="(max-width: 680px)">
+
+                <!-- fallback -->
+                <img class="slider-card__img" src="assets/img/slider/coffee-1-348.png" alt="Iced frappuccino in a tall glass with whipped foam" loading="lazy">
+              </picture>
+            </div>
+            <h3 class="slider-card__title">S’mores Frappuccino</h3>
+            <p class="slider-card__description">
+              This new drink takes an espresso and mixes it 
+              with brown sugar and cinnamon before being topped with oat milk.
+            </p>
+            <span class="slider-card__price">$5.50</span>
+          </div>
+        </div>
+        <div class="slider-nav">
+          <button type="button" class="slider-nav__button slider-nav__button--left" aria-label="Previous coffee">
+            <svg class="slider-nav__icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="slider-nav__path" stroke="#403F3D" d="M18.5 12H6M12 18L6 12L12 6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button type="button" class="slider-nav__button slider-nav__button--right" aria-label="Next coffee">
+            <svg class="slider-nav__icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="slider-nav__path" stroke="#403F3D" d="M6 12H18.5M12.5 18L18.5 12L12.5 6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <div class="slider-dots" role="group" aria-label="Choose coffee">
+          <button class="slider-dot" type="button" aria-label="Show S’mores Frappuccino" aria-current="true"></button>
+          <button class="slider-dot" type="button" aria-label="Show Caramel Macchiato"></button>
+          <button class="slider-dot" type="button" aria-label="Show Ice coffee"></button>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about section" aria-labelledby="about-title">
+      <h2 id="about-title" class="visually-hidden">About Resource</h2>
+      <p class="title">Resource is <span class="title--highlight">the perfect and cozy place</span> where you can enjoy a variety of hot beverages, relax, catch up with friends, or get some work done.</p>
+      <ul class="about__pictures">
+        <li class="about__picture-wrapper about__picture-wrapper--big about__picture-wrapper--big-top">
+          <picture class="about__picture">
+            <!-- desktop-tablet -->
+            <source 
+              srcset="assets/img/about/about-1-726.webp 1x, assets/img/about/about-1-1452.webp 2x" 
+              type="image/webp" 
+              media="(min-width: 681px)">
+            <source 
+              srcset="assets/img/about/about-1-726.jpg 1x, assets/img/about/about-1-1452.jpg 2x" 
+              type="image/jpeg" 
+              media="(min-width: 681px)">
+  
+            <!-- mobile -->
+            <source 
+              srcset="assets/img/about/about-1-688.webp 1x, assets/img/about/about-1-1376.webp 2x" 
+              type="image/webp" 
+              media="(max-width: 680px)">
+            <source 
+              srcset="assets/img/about/about-1-688.jpg 1x, assets/img/about/about-1-1376.jpg 2x" 
+              type="image/jpeg" 
+              media="(max-width: 680px)">
+  
+            <!-- fallback -->
+            <img class="about__img" src="assets/img/about/about-1-688.jpg" alt="" loading="lazy">
+          </picture>
+        </li>
+
+        <li class="about__picture-wrapper about__picture-wrapper--small about__picture-wrapper--small-top">
+          <picture class="about__picture">
+            <!-- mobile -->
+            <source
+              media="(max-width: 680px)"
+              srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+
+            <!-- desktop-tablet -->
+            <source 
+              srcset="assets/img/about/about-3-726.webp 1x, assets/img/about/about-3-1452.webp 2x" 
+              type="image/webp">
+            <source 
+              srcset="assets/img/about/about-3-726.jpg 1x, assets/img/about/about-3-1452.jpg 2x" 
+              type="image/jpeg">
+          
+            <!-- fallback -->
+            <img class="about__img" src="assets/img/about/about-3-660.jpg" alt="" loading="lazy">
+          </picture>
+        </li>
+
+        <li class="about__picture-wrapper about__picture-wrapper--small about__picture-wrapper--small-bottom">
+          <picture class="about__picture">
+            <!-- mobile -->
+            <source
+              media="(max-width: 680px)"
+              srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+              
+            <!-- desktop-tablet -->
+            <source 
+              srcset="assets/img/about/about-2-726.webp 1x, assets/img/about/about-2-1452.webp 2x" 
+              type="image/webp">
+            <source 
+              srcset="assets/img/about/about-2-726.jpg 1x, assets/img/about/about-2-1452.jpg 2x" 
+              type="image/jpeg">
+  
+            <!-- fallback -->
+            <img class="about__img" src="assets/img/about/about-2-726.jpg" alt="" loading="lazy">
+          </picture>
+        </li>
+
+        <li class="about__picture-wrapper about__picture-wrapper--big about__picture-wrapper--big-bottom">
+          <picture class="about__picture">
+            <!-- desktop-tablet -->
+            <source 
+              srcset="assets/img/about/about-4-726.webp 1x, assets/img/about/about-4-1452.webp 2x" 
+              type="image/webp" 
+              media="(min-width: 681px)">
+            <source 
+              srcset="assets/img/about/about-4-726.jpg 1x, assets/img/about/about-4-1452.jpg 2x" 
+              type="image/jpeg" 
+              media="(min-width: 681px)">
+  
+            <!-- mobile -->
+            <source 
+              srcset="assets/img/about/about-4-688.webp 1x, assets/img/about/about-4-1376.webp 2x" 
+              type="image/webp" 
+              media="(max-width: 680px)">
+            <source 
+              srcset="assets/img/about/about-4-688.jpg 1x, assets/img/about/about-4-1376.jpg 2x" 
+              type="image/jpeg" 
+              media="(max-width: 680px)">
+  
+            <!-- fallback -->
+            <img class="about__img" src="assets/img/about/about-4-660.jpg" alt="" loading="lazy">
+          </picture>
+        </li>
+      </ul>
+    </section>
+
+    <section id="mobile" class="section mobile" aria-labelledby="mobile-title">
+      <div class="mobile__content">
+        <h2 id="mobile-title" class="title mobile__title"><span class="title--highlight">Download</span> our app to start ordering</h2>
+        <p class="mobile__description">Download the Resource app today and experience the comfort of ordering your favorite coffee from whenever you are</p>
+        <ul class="mobile__links">
+          <li class="mobile__link-container">
+            <a class="mobile__link" href="https://www.apple.com/app-store/">
+              <svg aria-hidden="true" class="mobile__link-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="mobile__path" d="M22.6357 6.87268C23.7477 5.51675 24.5086 3.67205 24.2974 1.80005C22.6879 1.86952 20.675 2.88554 19.5159 4.21169C18.4903 5.38029 17.5742 7.29571 17.8109 9.097C19.6189 9.2285 21.4753 8.20752 22.6357 6.87268Z" fill="#403F3D"/>
+                <path class="mobile__path" d="M26.7073 18.6307C26.6704 14.6324 30.065 12.6872 30.2203 12.5966C28.2977 9.86366 25.3178 9.49026 24.2707 9.46048C21.7679 9.20369 19.3403 10.9206 18.0654 10.9206C16.765 10.9206 14.8017 9.48529 12.6858 9.52747C9.96293 9.56841 7.41566 11.1055 6.0186 13.4923C3.13542 18.359 5.28572 25.5108 8.04802 29.4446C9.42981 31.3712 11.0444 33.5223 13.1578 33.4466C15.2254 33.3635 15.9978 32.1614 18.4929 32.1614C20.9651 32.1614 21.6903 33.4466 23.8457 33.3983C26.0647 33.3635 27.4618 31.463 28.7952 29.519C30.392 27.3108 31.0333 25.1362 31.0588 25.0245C31.0066 25.0071 26.7493 23.4229 26.7073 18.6307Z" fill="#403F3D"/>
+              </svg>
+              <span class="mobile__link-text mobile__link-text--small">Available on the</span>
+              <span class="mobile__link-text mobile__link-text--standart">App Store</span>
+            </a>
+          </li>
+          <li class="mobile__link-container">
+            <a class="mobile__link" href="https://play.google.com/store/apps/">
+              <svg aria-hidden="true" class="mobile__link-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="mobile__path" d="M3.7558 3.20297C3.39335 3.57289 3.18359 4.14884 3.18359 4.89471V31.4994C3.18359 32.2453 3.39335 32.8212 3.7558 33.1911L3.84525 33.2723L19.1359 18.37V18.0181L3.84525 3.11575L3.7558 3.20297Z" fill="#403F3D"/>
+                <path class="mobile__path" d="M26.0776 23.34L20.9863 18.37V18.0181L26.0837 13.0482L26.1979 13.1128L32.2345 16.4617C33.9573 17.4121 33.9573 18.976 32.2345 19.9324L26.1979 23.2753L26.0776 23.34V23.34Z" fill="#403F3D"/>
+                <path class="mobile__path" d="M25.2733 24.2007L20.0617 19.1195L4.68164 34.1166C5.25384 34.7031 6.18695 34.7737 7.24807 34.1873L25.2733 24.2007" fill="#403F3D"/>
+                <path class="mobile__path" d="M25.2733 12.1876L7.24807 2.20103C6.18695 1.62058 5.25384 1.69125 4.68164 2.27772L20.0617 17.2688L25.2733 12.1876Z" fill="#403F3D"/>
+              </svg>
+              <span class="mobile__link-text mobile__link-text--small">Available on</span>
+              <span class="mobile__link-text mobile__link-text--standart">Google Play</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <picture class="mobile__picture">
+        <!-- desktop-tablet -->
+        <source 
+          srcset="assets/img/mobile/screens-630.webp 1x, assets/img/mobile/screens-1260.webp 2x" 
+          type="image/webp" 
+          media="(min-width: 681px)">
+        <source 
+          srcset="assets/img/mobile/screens-630.jpg 1x, assets/img/mobile/screens-1260.jpg 2x" 
+          type="image/jpeg" 
+          media="(min-width: 681px)">
+
+        <!-- mobile -->
+        <source 
+          srcset="assets/img/mobile/screens-348.webp 1x, assets/img/mobile/screens-696.webp 2x" 
+          type="image/webp" 
+          media="(max-width: 680px)">
+        <source 
+          srcset="assets/img/mobile/screens-348.jpg 1x, assets/img/mobile/screens-696.jpg 2x" 
+          type="image/jpeg" 
+          media="(max-width: 680px)">
+
+        <!-- fallback -->
+        <img aria-hidden="true" class="mobile__img" src="assets/img/mobile/screens-348.png" alt="" loading="lazy">
+      </picture>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <div class="footer__social">
+      <p class="title">Sip, Savor, Smile. <br><span class="title--highlight">It’s coffee time!</span></p>
+      <ul class="social-links">
+        <li class="social-links__item">
+          <a class="social-links__a" href="https://x.com/" aria-label="X (Twitter)">
+            <svg class="social-links__icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="social-links__path" d="M23 3.01006C23 3.01006 20.9821 4.20217 19.86 4.54006C19.2577 3.84757 18.4573 3.35675 17.567 3.13398C16.6767 2.91122 15.7395 2.96725 14.8821 3.29451C14.0247 3.62177 13.2884 4.20446 12.773 4.96377C12.2575 5.72309 11.9877 6.62239 12 7.54006V8.54006C10.2426 8.58562 8.50127 8.19587 6.93101 7.4055C5.36074 6.61513 4.01032 5.44869 3 4.01006C3 4.01006 -1 13.0101 8 17.0101C5.94053 18.408 3.48716 19.109 1 19.0101C10 24.0101 21 19.0101 21 7.51006C20.9991 7.23151 20.9723 6.95365 20.92 6.68006C21.9406 5.67355 23 3.01006 23 3.01006Z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </li>
+        <li class="social-links__item">
+          <a class="social-links__a" href="https://www.instagram.com/" aria-label="Instagram">
+            <svg class="social-links__icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="social-links__path" d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke-linecap="round" stroke-linejoin="round"/>
+              <path class="social-links__path" d="M3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16Z"/>
+              <path class="social-links__path" d="M17.5 6.51L17.51 6.49889" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </li>
+        <li class="social-links__item">
+          <a class="social-links__a" href="https://www.facebook.com/" aria-label="Facebook">
+            <svg class="social-links__icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="social-links__path" d="M17 2H14C12.6739 2 11.4021 2.52678 10.4645 3.46447C9.52678 4.40215 9 5.67392 9 7V10H6V14H9V22H13V14H16L17 10H13V7C13 6.73478 13.1054 6.48043 13.2929 6.29289C13.4804 6.10536 13.7348 6 14 6H17V2Z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <section class="footer__contact" id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title" class="footer__title">Contact us</h2>
+      <address class="footer-address">
+        <a 
+          class="footer-address__item footer-address__item--location"
+          href="https://www.google.com/maps/search/?api=1&query=8558+Green+Rd,+Los+Angeles,+CA"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          8558 Green Rd., LA
+        </a>
+        <a 
+          class="footer-address__item footer-address__item--tel" 
+          href="tel:+16035550123"
+        >
+          +1 (603) 555-0123
+        </a>
+      </address>
+      <p class="footer-time footer-address__item--time">Mon–Sat: 9:00–23:00</p>
+    </section>
+  </footer>
+  <script type="module" src="scripts/theme.js"></script>
+  <script type="module" src="scripts/index.js"></script>
+</body>
+</html>

@@ -332,7 +332,6 @@ body {
 .button-hero__text {
   display: block;
   padding-right: 28px;
-  background-color: var(--bg-page);
 }
 
 .button-hero__icon {

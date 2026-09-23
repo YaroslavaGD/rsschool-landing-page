@@ -10,8 +10,13 @@
         const systemPrefers = matchMedia('(prefers-color-scheme: dark)'). matches ? 'dark' : 'light';
         const theme = stored === 'dark' || stored === 'light' ? stored : systemPrefers;
         document.documentElement.setAttribute('data-theme', theme);
-      } catch (e) {
-      }
+      } catch (e) {}
+      document.documentElement.classList.add('no-transition');
+      window.addEventListener('load', () => {
+        requestAnimationFrame(() => {
+          document.documentElement.classList.remove('no-transition');
+        });
+      });
     })();
   </script>
   <link rel="shortcut icon" href="assets/img/logo-dark.svg" type="image/x-icon">

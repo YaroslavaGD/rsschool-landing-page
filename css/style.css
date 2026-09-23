@@ -939,6 +939,35 @@ body {
   transition: stroke 0.15s ease-in;
 }
 
+.no-transition,
+.no-transition * {
+  transition: none !important;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body,
+  .header,
+  .footer,
+  .card,
+  .hero,
+  .button,
+  .theme-switch,
+  .social-links__a,
+  .mobile__link,
+  .menu-tabs__item {
+    transition: background-color 0.15s ease-in, color 0.15s ease-in, border-color 0.15s ease-in;
+  }
+
+  .menu__path,
+  .slider-nav__path,
+  .social-links__path,
+  .button-more__path,
+  .mobile__path,
+  .button-more__path {
+    transition: stroke 0.15s ease-in, fill 0.15s ease-in;
+  }
+}
+
 @media (max-width: 1439px) {
   .card-list {
     display: flex;

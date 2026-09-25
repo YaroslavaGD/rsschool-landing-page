@@ -1256,6 +1256,10 @@ body {
 }
 
 @media (max-width: 455px) {
+  .nav__list {
+    padding-top: var(--indent-tablet);
+    justify-content: flex-start;
+  }
   .mobile__links {
     flex-direction: column;
   }  

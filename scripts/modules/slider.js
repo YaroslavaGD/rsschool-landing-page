@@ -1,7 +1,11 @@
-const MAX_SLIDES = 3;
-
 function createSlider() {
   const sliderElement = document.querySelector('.slider');
+  if (!sliderElement) {
+    return {
+      init() {}
+    }
+  }
+
   const prevButton = sliderElement.querySelector('.slider-nav__button--left');
   const nextButton = sliderElement.querySelector('.slider-nav__button--right');
   const dotsContainer = sliderElement.querySelector('.slider-dots');

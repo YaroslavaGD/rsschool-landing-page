@@ -117,6 +117,28 @@
     <section id="coffee" class="coffee section" aria-labelledby="coffee-title" >
       <h2 id="coffee-title" class="title coffee__title">Choose your <span class="title--highlight">favorite</span> coffee</h2>
       <div class="slider" role="group" aria-roledescription="carousel" aria-label="Favorite coffee">
+
+        <div class="slider-nav">
+          <button 
+            class="slider-nav__button slider-nav__button--left" 
+            type="button" 
+            aria-label="Previous coffee"
+          >
+            <svg class="slider-nav__icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="slider-nav__path" stroke="#403F3D" d="M18.5 12H6M12 18L6 12L12 6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button 
+            class="slider-nav__button slider-nav__button--right" 
+            type="button" 
+            aria-label="Next coffee"
+          >
+            <svg class="slider-nav__icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="slider-nav__path" stroke="#403F3D" d="M6 12H18.5M12.5 18L18.5 12L12.5 6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+
         <div class="slider-track-wrapper">
           <div class="slider-track" aria-live="polite">
             <div class="slider-card" role="group" aria-roledescription="slide" aria-label="1 of 3">
@@ -223,22 +245,27 @@
             </div>
           </div>
         </div>
-        <div class="slider-nav">
-          <button type="button" class="slider-nav__button slider-nav__button--left" aria-label="Previous coffee">
-            <svg class="slider-nav__icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path class="slider-nav__path" stroke="#403F3D" d="M18.5 12H6M12 18L6 12L12 6" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-          <button type="button" class="slider-nav__button slider-nav__button--right" aria-label="Next coffee">
-            <svg class="slider-nav__icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path class="slider-nav__path" stroke="#403F3D" d="M6 12H18.5M12.5 18L18.5 12L12.5 6" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-        </div>
+
         <div class="slider-dots" role="group" aria-label="Choose coffee">
-          <button class="slider-dot" type="button" data-slide="0" aria-label="Show S’mores Frappuccino" aria-current="true"></button>
-          <button class="slider-dot" type="button" data-slide="1" aria-label="Show Caramel Macchiato"></button>
-          <button class="slider-dot" type="button" data-slide="2" aria-label="Show Ice coffee"></button>
+          <button 
+            class="slider-dot" 
+            type="button" 
+            data-slide="0" 
+            aria-label="Show S’mores Frappuccino" 
+            aria-current="true"
+          ></button>
+          <button 
+            class="slider-dot" 
+            type="button" 
+            data-slide="1" 
+            aria-label="Show Caramel Macchiato"
+          ></button>
+          <button 
+            class="slider-dot" 
+            type="button" 
+            data-slide="2" 
+            aria-label="Show Ice coffee"
+          ></button>
         </div>
       </div>
     </section>

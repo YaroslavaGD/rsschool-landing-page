@@ -11,21 +11,18 @@ function createSlider() {
   const dotsContainer = sliderElement.querySelector('.slider-dots');
   const dots = [...sliderElement.querySelectorAll('.slider-dot')];
   const track = sliderElement.querySelector('.slider-track');
-  const trackWrapper = sliderElement.querySelector('.slider-track-wrapper');
 
   const slidesCount = dots.length;
   let currentSlideNumber = 0;
 
-  function getSlideWidth() {
-    return trackWrapper.getBoundingClientRect().width;
+  function setTrackPosition(isTransition) {
+    track.style.transition = isTransition ? `transform  0.6s cubic-bezier(.65, 0, .35, 1)` : 'none';
+    track.style.transform = `translateX(${-(currentSlideNumber) * 100}%)`;
   }
 
   function goToSlide(index) {
     currentSlideNumber = (index + slidesCount) % slidesCount;
-
-    track.style.transform = `translateX(${-(currentSlideNumber) * getSlideWidth()}px)`;
-    track.style.transition = `transform  0.6s cubic-bezier(.65, 0, .35, 1)`;
-
+    setTrackPosition(true);
     updateDots();
   }
 
@@ -55,8 +52,8 @@ function createSlider() {
     prevButton.addEventListener('click', handlePrevClick);
     nextButton.addEventListener('click', handleNextClick);
     dotsContainer.addEventListener('click', handleDotClick);
-
     updateDots();
+    setTrackPosition(false);
   }
 
   return {

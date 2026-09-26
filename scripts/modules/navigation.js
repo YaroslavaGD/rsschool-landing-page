@@ -3,7 +3,7 @@ const MOBILE_QUERY = '(max-width: 768px)';
 function createNavigation() {
   const page = document.querySelector('.page');
   const navButton = document.querySelector('.burger');
-  const nav = document.querySelector('.nav');
+  const navContainer = document.querySelector('.nav');
   const mobileMedia = matchMedia(MOBILE_QUERY);
 
   let isOpen = false;
@@ -14,8 +14,8 @@ function createNavigation() {
 
     navButton.classList.toggle('burger--open', open);
     navButton.setAttribute('aria-expanded', String(open));
-    nav.classList.toggle('nav--open', open);
-    nav.toggleAttribute('inert', !open);
+    navContainer.classList.toggle('nav--open', open);
+    navContainer.toggleAttribute('inert', !open);
     page.classList.toggle('page--clip', open);
   }
 
@@ -39,7 +39,7 @@ function createNavigation() {
   }
 
   function handleOutsideClick(e) {
-    if (isOpen && !nav.contains(e.target) && e.target !== navButton) {
+    if (isOpen && !navContainer.contains(e.target) && e.target !== navButton) {
       close();
     }
   }
@@ -58,7 +58,7 @@ function createNavigation() {
 
   function init() {
     navButton.addEventListener('click', handleButtonClick);
-    nav.addEventListener('click', handleNavClick);
+    navContainer.addEventListener('click', handleNavClick);
     document.addEventListener('click', handleOutsideClick);
     document.addEventListener('keydown', handleKeydown);
     mobileMedia.addEventListener('change', handleMediaChange);

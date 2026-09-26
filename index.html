@@ -117,40 +117,110 @@
     <section id="coffee" class="coffee section" aria-labelledby="coffee-title" >
       <h2 id="coffee-title" class="title coffee__title">Choose your <span class="title--highlight">favorite</span> coffee</h2>
       <div class="slider" role="group" aria-roledescription="carousel" aria-label="Favorite coffee">
-        <div class="slider-track" aria-live="polite">
-          <div class="slider-card" role="group" aria-roledescription="slide" aria-label="1 of 3">
-            <div class="slider-card__image-wrapper">
-              <picture class="slider-card__picture">
-                <!-- desktop-tablet -->
-                <source 
-                  srcset="assets/img/slider/coffee-1-480.webp 1x, assets/img/slider/coffee-1-960.webp 2x" 
-                  type="image/webp" 
-                  media="(min-width: 681px)">
-                <source 
-                  srcset="assets/img/slider/coffee-1-480.png 1x, assets/img/slider/coffee-1-960.png 2x" 
-                  type="image/png" 
-                  media="(min-width: 681px)">
-
-                <!-- mobile -->
-                <source 
-                  srcset="assets/img/slider/coffee-1-348.webp 1x, assets/img/slider/coffee-1-696.webp 2x" 
-                  type="image/webp" 
-                  media="(max-width: 680px)">
-                <source 
-                  srcset="assets/img/slider/coffee-1-348.png 1x, assets/img/slider/coffee-1-696.png 2x" 
-                  type="image/png" 
-                  media="(max-width: 680px)">
-
-                <!-- fallback -->
-                <img class="slider-card__img" src="assets/img/slider/coffee-1-348.png" alt="Iced frappuccino in a tall glass with whipped foam" loading="lazy">
-              </picture>
+        <div class="slider-track-wrapper">
+          <div class="slider-track" aria-live="polite">
+            <div class="slider-card" role="group" aria-roledescription="slide" aria-label="1 of 3">
+              <div class="slider-card__image-wrapper">
+                <picture class="slider-card__picture">
+                  <!-- desktop-tablet -->
+                  <source 
+                    srcset="assets/img/slider/coffee-1-480.webp 1x, assets/img/slider/coffee-1-960.webp 2x" 
+                    type="image/webp" 
+                    media="(min-width: 681px)">
+                  <source 
+                    srcset="assets/img/slider/coffee-1-480.png 1x, assets/img/slider/coffee-1-960.png 2x" 
+                    type="image/png" 
+                    media="(min-width: 681px)">
+  
+                  <!-- mobile -->
+                  <source 
+                    srcset="assets/img/slider/coffee-1-348.webp 1x, assets/img/slider/coffee-1-696.webp 2x" 
+                    type="image/webp" 
+                    media="(max-width: 680px)">
+                  <source 
+                    srcset="assets/img/slider/coffee-1-348.png 1x, assets/img/slider/coffee-1-696.png 2x" 
+                    type="image/png" 
+                    media="(max-width: 680px)">
+  
+                  <!-- fallback -->
+                  <img class="slider-card__img" src="assets/img/slider/coffee-1-348.png" alt="Iced frappuccino in a tall glass with whipped foam" loading="lazy">
+                </picture>
+              </div>
+              <h3 class="slider-card__title">S’mores Frappuccino</h3>
+              <p class="slider-card__description">
+                This new drink takes an espresso and mixes it 
+                with brown sugar and cinnamon before being topped with oat milk.
+              </p>
+              <span class="slider-card__price">$5.50</span>
             </div>
-            <h3 class="slider-card__title">S’mores Frappuccino</h3>
-            <p class="slider-card__description">
-              This new drink takes an espresso and mixes it 
-              with brown sugar and cinnamon before being topped with oat milk.
-            </p>
-            <span class="slider-card__price">$5.50</span>
+  
+            <div class="slider-card" role="group" aria-roledescription="slide" aria-label="2 of 3">
+              <div class="slider-card__image-wrapper">
+                <picture class="slider-card__picture">
+                  <!-- desktop-tablet -->
+                  <source 
+                    srcset="assets/img/slider/coffee-2-480.webp 1x, assets/img/slider/coffee-2-960.webp 2x" 
+                    type="image/webp" 
+                    media="(min-width: 681px)">
+                  <source 
+                    srcset="assets/img/slider/coffee-2-480.png 1x, assets/img/slider/coffee-2-960.png 2x" 
+                    type="image/png" 
+                    media="(min-width: 681px)">
+  
+                  <!-- mobile -->
+                  <source 
+                    srcset="assets/img/slider/coffee-2-348.webp 1x, assets/img/slider/coffee-2-696.webp 2x" 
+                    type="image/webp" 
+                    media="(max-width: 680px)">
+                  <source 
+                    srcset="assets/img/slider/coffee-2-348.png 1x, assets/img/slider/coffee-2-696.png 2x" 
+                    type="image/png" 
+                    media="(max-width: 680px)">
+  
+                  <!-- fallback -->
+                  <img class="slider-card__img" src="assets/img/slider/coffee-2-348.png" alt="Caramel macchiato with layered espresso, steamed milk, caramel-peanut syrup, and thick foam in a clear glass" loading="lazy">
+                </picture>
+              </div>
+              <h3 class="slider-card__title">Caramel Macchiato</h3>
+              <p class="slider-card__description">
+                Fragrant and unique classic espresso with rich caramel-peanut syrup, with cream under whipped thick foam.
+              </p>
+              <span class="slider-card__price">$5.00</span>
+            </div>
+  
+            <div class="slider-card" role="group" aria-roledescription="slide" aria-label="3 of 3">
+              <div class="slider-card__image-wrapper">
+                <picture class="slider-card__picture">
+                  <!-- desktop-tablet -->
+                  <source 
+                    srcset="assets/img/slider/coffee-3-480.webp 1x, assets/img/slider/coffee-3-960.webp 2x" 
+                    type="image/webp" 
+                    media="(min-width: 681px)">
+                  <source 
+                    srcset="assets/img/slider/coffee-3-480.png 1x, assets/img/slider/coffee-3-960.png 2x" 
+                    type="image/png" 
+                    media="(min-width: 681px)">
+  
+                  <!-- mobile -->
+                  <source 
+                    srcset="assets/img/slider/coffee-3-348.webp 1x, assets/img/slider/coffee-3-696.webp 2x" 
+                    type="image/webp" 
+                    media="(max-width: 680px)">
+                  <source 
+                    srcset="assets/img/slider/coffee-3-348.png 1x, assets/img/slider/coffee-3-696.png 2x" 
+                    type="image/png" 
+                    media="(max-width: 680px)">
+  
+                  <!-- fallback -->
+                  <img class="slider-card__img" src="assets/img/slider/coffee-3-348.png" alt="Iced coffee served over ice in a clear glass, a refreshing cold coffee drink" loading="lazy">
+                </picture>
+              </div>
+              <h3 class="slider-card__title">Ice coffee</h3>
+              <p class="slider-card__description">
+                A popular summer drink that tones and invigorates. Prepared from coffee, milk and ice.
+              </p>
+              <span class="slider-card__price">$4.50</span>
+            </div>
           </div>
         </div>
         <div class="slider-nav">
@@ -166,9 +236,9 @@
           </button>
         </div>
         <div class="slider-dots" role="group" aria-label="Choose coffee">
-          <button class="slider-dot" type="button" aria-label="Show S’mores Frappuccino" aria-current="true"></button>
-          <button class="slider-dot" type="button" aria-label="Show Caramel Macchiato"></button>
-          <button class="slider-dot" type="button" aria-label="Show Ice coffee"></button>
+          <button class="slider-dot" type="button" data-slide="0" aria-label="Show S’mores Frappuccino" aria-current="true"></button>
+          <button class="slider-dot" type="button" data-slide="1" aria-label="Show Caramel Macchiato"></button>
+          <button class="slider-dot" type="button" data-slide="2" aria-label="Show Ice coffee"></button>
         </div>
       </div>
     </section>

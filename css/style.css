@@ -420,6 +420,9 @@ body {
 .slider {
   position: relative;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .slider-nav {
@@ -448,12 +451,18 @@ body {
   stroke: var(--text-primary)
 }
 
+.slider-track-wrapper {
+  width: calc(100% - 308px);
+  overflow: hidden;
+}
 
 .slider-track {
+  display: flex;
   margin-bottom: var(--indent-half);
 }
 
 .slider-card {
+  min-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;

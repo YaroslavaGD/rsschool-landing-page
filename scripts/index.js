@@ -1,6 +1,7 @@
 import { theme } from './modules/theme.js';
 import { nav } from './modules/navigation.js';
 import { slider } from './modules/slider.js';
+import { cards } from './modules/cards.js';
 
 const themeSwitch = document.querySelector('.theme-switch');
 
@@ -14,3 +15,4 @@ themeSwitch.addEventListener('click', () => theme.toggle());
 
 nav.init();
 slider.init();
+cards.init();

@@ -1,10 +1,12 @@
 import { CARDS_DATA } from "../cards-data.js";
-
 import { card } from "./card.js";
+import { withCategoryIndex } from "./utils.js";
 
 function createCards() {
+  const preparedCardsData = withCategoryIndex(CARDS_DATA);
+
   function createCard(index) {
-    return card.init(CARDS_DATA[index], index);
+    return card.init(preparedCardsData[index]);
   }
 
   function init() {

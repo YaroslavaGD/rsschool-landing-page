@@ -25,10 +25,9 @@ function createCard() {
     return pictureWrapper;
   }
 
-  function createContent(data, index) {
-
-    const idDescription = `${generateId(data, index, 'desc')}`;
-    const idPrice = `${generateId(data, index, 'price')}`;
+  function createContent(data) {
+    const idDescription = `${generateId(data, 'desc')}`;
+    const idPrice = `${generateId(data, 'price')}`;
 
     const content = document.createElement('div');
     content.classList.add(CARD_CLASSES.CONTENT);
@@ -98,17 +97,17 @@ function createCard() {
     return priceElement;
   }
 
-  function generateId(data, index, name) {
-    const { category } = data;
-    return `${category}-${index + 1}-${name}`;
+  function generateId(data, name) {
+    const { category, categoryIndex } = data;
+    return `${category}-${categoryIndex + 1}-${name}`;
   }
 
-  function init(data, index) {
+  function init(data) {
     const cardElement = document.createElement('article');
     cardElement.classList.add(CARD_CLASSES.CARD);
 
     const pictureWrapper = createPictureWrapper(data);
-    const content = createContent(data, index);
+    const content = createContent(data);
 
     cardElement.appendChild(pictureWrapper);
     cardElement.appendChild(content);

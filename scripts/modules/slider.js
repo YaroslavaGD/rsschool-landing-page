@@ -1,3 +1,6 @@
+// TODO: swap on desktop devices
+// TODO: vertical scroll
+
 function createSlider() {
   const sliderElement = document.querySelector('.slider');
   if (!sliderElement) {
@@ -72,7 +75,7 @@ function createSlider() {
     currentDeltaPercent = (deltaPx / wrappedWidth) * 100;
 
     setTrackPosition(false, currentDeltaPercent);
-    updateDots();
+    // updateDots();
   }
 
   function handleTouchEnd() {

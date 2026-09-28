@@ -92,6 +92,77 @@
     <div class="section">
       <h1 class="visually-hidden">Menu</h1>
       <p class="title title--menu">Behind each of our cups hides an <span class="title--highlight">amazing surprise</span></p>
+      
+      <dialog class="modal" aria-describedby="modal-title">
+        <article class="card">
+          <div class="card__picture-wrapper">
+            <picture class="card__picture">
+              <!-- mobile -->
+              <source
+              media="(max-width: 680px)"
+              srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+
+              <!-- desktop-tablet -->
+              <source srcset="assets/img/menu/coffee-1-340.webp 1x, assets/img/menu/coffee-1.webp 2x" type="image/webp">
+              <source srcset="assets/img/menu/coffee-1-340.jpg 1x, assets/img/menu/coffee-1.jpg 2x" type="image/jpeg">
+    
+              <!-- fallback -->
+              <img class="card__img" src="assets/img/menu/coffee-1-340.jpg" alt="" loading="lazy">
+            </picture>
+          </div>
+          <div class="card__content">
+            <h2 class="card__title modal__title" id="modal-title">Irish coffee</h2>
+            <p class="card__description modal__description">
+              Fragrant black coffee with Jameson Irish whiskey and whipped milk
+            </p>
+
+            <fieldset>
+              <legend>Size</legend>
+              <input id="s-option" type="radio" name="sizes" value="s" checked/>
+              <label for="s-option">200ml</label>
+              <input id="m-option" type="radio" name="sizes" value="m" />
+              <label for="m-option">300ml</label>
+              <input id="l-option" type="radio" name="sizes" value="l" />
+              <label for="l-option">400ml</label>
+            </fieldset>
+
+            <fieldset>
+              <legend>
+                Additives
+              </legend>
+
+              <input 
+                type="checkbox" 
+                id="sugar-option" 
+                name="additives" 
+                value="sugar" 
+              />
+              <label for="sugar-option">Sugar</label>
+
+              <input
+                type="checkbox"
+                id="cinnamon-option"
+                name="additives"
+                value="cinnamon"
+              />
+              <label for="cinnamon-option">Cinnamon</label>
+              <input
+                type="checkbox"
+                id="syrup-option"
+                name="additives"
+                value="syrup"
+              />
+              <label for="syrup-option">Syrup</label>
+              
+            </fieldset>
+            
+            <p class="card__price modal__price">$7.00</p>
+            <button type="button" class="modal__close">
+              <span class="modal__close-text">Close</span>
+            </button>
+          </div>
+        </article>
+      </dialog>
       <div class="cards"></div>
     </div>
   </main>

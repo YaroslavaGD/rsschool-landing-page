@@ -13,3 +13,11 @@ export const withId = function(cardsData) {
 };
 
 export const getItemId = ({ category, categoryIndex }) => `${category}-${categoryIndex}`;
+
+export const getUniqueCategories = function(cardsData) {
+  return [...new Set(cardsData.map((item) => item.category))];
+}
+
+export const getCategoryItems = function(cardsData, category) {
+  return cardsData.filter((item) => item.category === category );
+}

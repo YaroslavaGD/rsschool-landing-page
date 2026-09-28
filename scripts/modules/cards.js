@@ -1,6 +1,7 @@
 import { CARDS_DATA } from "../cards-data.js";
 import { card } from "./card.js";
 import { withId, getUniqueCategories, getCategoryItems } from "./utils.js";
+import { modal } from "./modal.js";
 
 const CARDS_CLASSES = {
   TABS: 'cards-tabs',
@@ -172,6 +173,14 @@ function createCards() {
 
     refs.list = document.createElement('ul');
     refs.list.classList.add(CARDS_CLASSES.LIST);
+    refs.list.addEventListener('click', (e) => {
+      const cardElement = e.target.closest('.card');
+      if (!cardElement) return;
+
+      const data = cardsData.find((item) => item.id === cardElement.dataset.id);
+      if (data) modal.open(data);
+    });
+
     panel.appendChild(refs.list);
     
     refs.more = createMoreButton();

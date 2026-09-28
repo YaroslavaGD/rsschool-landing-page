@@ -1,4 +1,4 @@
-const CARD_CLASSES = {
+export const CARD_CLASSES = {
   CARD: 'card',
   PICTURE_WRAPPER: 'card__picture-wrapper',
   PICTURE: 'card__picture',
@@ -10,6 +10,7 @@ const CARD_CLASSES = {
   PRICE: 'card__price',
   VISUALLY_HIDDEN: 'visually-hidden'
 }
+
 const IMAGE_BASE_PATH = 'assets/img/menu';
 const IMAGE_FORMATS = ['webp', 'jpg'];
 const IMAGE_MIME_TYPES = {

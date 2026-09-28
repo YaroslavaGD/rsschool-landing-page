@@ -10,19 +10,59 @@ const CARD_CLASSES = {
   PRICE: 'card__price',
   VISUALLY_HIDDEN: 'visually-hidden'
 }
+const IMAGE_BASE_PATH = 'assets/img/menu';
+const IMAGE_FORMATS = ['webp', 'jpg'];
+const IMAGE_MIME_TYPES = {
+  webp: 'image/webp',
+  jpg: 'image/jpeg',
+};
+const IMAGE_SMALL_SUFFIX = '340';
 
 const PRICE_HINT_TEXT = 'Price: ';
 const PRICE_CURRENCY = '$';
 
 function createCard() {
-  const cardElement = document.createElement('article');
-  cardElement.classList.add(CARD_CLASSES.CARD);
-
+  
   function createPictureWrapper(data) {
     const pictureWrapper = document.createElement('div');
     pictureWrapper.classList.add(CARD_CLASSES.PICTURE_WRAPPER);
 
+    const picture = createPicture(data);
+    pictureWrapper.appendChild(picture);
+
     return pictureWrapper;
+  }
+
+  function createPicture(data) {
+    const basePath = generateImageBasePath(data);
+
+    const picture = document.createElement('picture');
+    picture.classList.add(CARD_CLASSES.PICTURE);
+
+    const createSource = (format) => {
+      const source = document.createElement('source');
+      source.srcset = `
+        ${basePath}-${IMAGE_SMALL_SUFFIX}.${format} 1x, 
+        ${basePath}.${format} 2x
+      `;
+      source.type = IMAGE_MIME_TYPES[format];
+      return source;
+    };
+
+    IMAGE_FORMATS.forEach((format) => {
+      picture.appendChild(createSource(format));
+    });
+
+    const fallbackFormat = IMAGE_FORMATS[IMAGE_FORMATS.length - 1]; //jpg
+    const img = document.createElement('img');
+    img.classList.add(CARD_CLASSES.IMG);
+    img.src = `${basePath}-${IMAGE_SMALL_SUFFIX}.${fallbackFormat}`;
+    img.alt = '';
+    img.loading = 'lazy';
+
+    picture.appendChild(img);
+
+    return picture;
   }
 
   function createContent(data) {
@@ -99,7 +139,12 @@ function createCard() {
 
   function generateId(data, name) {
     const { category, categoryIndex } = data;
-    return `${category}-${categoryIndex + 1}-${name}`;
+    return `${category}-${categoryIndex}-${name}`;
+  }
+
+  function generateImageBasePath(data) {
+    const { category, categoryIndex } = data;
+    return `${IMAGE_BASE_PATH}/${category}-${categoryIndex}`;
   }
 
   function init(data) {

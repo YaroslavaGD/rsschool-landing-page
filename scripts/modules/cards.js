@@ -113,7 +113,7 @@ function createCards() {
   }
 
   function init() {
-    const cardsContainer = document.querySelector('.cards-test');
+    const cardsContainer = document.querySelector('.cards');
 
     const panel = document.createElement('div');
     panel.classList.add(CARDS_CLASSES.TABS_CONTENT);

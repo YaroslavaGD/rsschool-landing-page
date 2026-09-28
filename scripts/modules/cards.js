@@ -12,7 +12,7 @@ const CARDS_CLASSES = {
   LIST_ITEM: 'cards-list__item',
   TABS_CONTENT: 'cards-tabs-content',
   MORE: 'cards-more',
-  MORE_ICON: 'cards-mode__icon',
+  MORE_ICON: 'cards-more__icon',
   MORE_PATH: 'cards-more__path',
 };
 
@@ -31,7 +31,7 @@ function createCards() {
   function createTabs(cardsData) {
     const tabs = document.createElement('div');
     tabs.classList.add(CARDS_CLASSES.TABS);
-    tabs.role = 'tablist';
+    tabs.setAttribute('role', 'tablist');
     tabs.setAttribute('aria-label', TABS_ARIA_LABEL);
 
     const categories = getUniqueCategories(cardsData);
@@ -47,11 +47,11 @@ function createCards() {
     const button = document.createElement('button');
     button.classList.add(CARDS_CLASSES.TABS_ITEM);
     button.type = 'button';
-    button.role = 'tab';
+    button.setAttribute('role', 'tab');
     button.id = `tab-${category}`;
     button.setAttribute('aria-selected', String(index === 0));
     button.setAttribute('aria-controls', `panel-${category}`);
-    button.tabIndex = (index !== 0) ? '-1': '';
+    button.tabIndex = (index === 0) ? 0: -1;
 
     const img = document.createElement('img');
     img.classList.add(CARDS_CLASSES.TABS_ICON);

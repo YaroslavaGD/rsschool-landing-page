@@ -100,6 +100,7 @@ function createCard() {
     button.classList.add(CARD_CLASSES.BUTTON);
     button.type = 'button';
     button.ariaHasPopup = 'dialog';
+    button.setAttribute('aria-haspopup', 'dialog');
     button.setAttribute('aria-describedby', `${idDescription} ${idPrice}`);
     button.textContent = name;
 
@@ -138,18 +139,20 @@ function createCard() {
   }
 
   function generateId(data, name) {
-    const { category, categoryIndex } = data;
-    return `${category}-${categoryIndex}-${name}`;
+    const { id } = data;
+    return `${id}-${name}`;
   }
 
   function generateImageBasePath(data) {
-    const { category, categoryIndex } = data;
-    return `${IMAGE_BASE_PATH}/${category}-${categoryIndex}`;
+    const { id } = data;
+    return `${IMAGE_BASE_PATH}/${id}`;
   }
 
   function init(data) {
+    const { id } = data;
     const cardElement = document.createElement('article');
     cardElement.classList.add(CARD_CLASSES.CARD);
+    cardElement.dataset.id = id;
 
     const pictureWrapper = createPictureWrapper(data);
     const content = createContent(data);

@@ -7,7 +7,9 @@ export const withCategoryIndex = function(cardsData) {
 
     return {
       ...item,
-      categoryIndex: counters[category], // starts from 1
+      id: `${item.category}-${counters[item.category]}`, // starts from 1
     };
   });
 };
+
+export const getItemId = ({ category, categoryIndex }) => `${category}-${categoryIndex}`;

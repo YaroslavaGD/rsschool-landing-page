@@ -7,7 +7,7 @@
     (function () {
       try {
         const stored = localStorage.getItem('theme');
-        const systemPrefers = matchMedia('(prefers-color-scheme: dark)'). matches ? 'dark' : 'light';
+        const systemPrefers = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
         const theme = stored === 'dark' || stored === 'light' ? stored : systemPrefers;
         document.documentElement.setAttribute('data-theme', theme);
       } catch (e) {}

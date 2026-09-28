@@ -11,6 +11,7 @@
 
   --border-primary: #c1b6ad;
   --border-inverse: #665f55;
+  --modal-primary: #403F3DCC;
 
   /* Typography  */
   --font-size-h1: 4.5rem;
@@ -952,6 +953,70 @@ body {
 .cards-more__path {
   stroke: var(--text-primary);
   transition: stroke 0.15s ease-in;
+}
+
+.modal {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--modal-primary);
+  border: none;
+  z-index: 1;
+}
+
+.modal .card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  gap: 20px;
+  flex-direction: row;
+  max-width: 800px;
+  width: 800px;
+  padding: var(--indent-small);
+  background-color: var(--bg-page);
+  transform: translate(-50%, -50%);
+}
+
+.modal .card__content {
+  padding: 0;
+  justify-content: space-between;
+}
+
+.modal__close {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-inverse);
+  border-radius: var(--radius-big);
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.modal__close-text {
+  font-size: var(--font-size-regular);
+  line-height: var(--line-height-standard);
+  font-weight: var(--font-weight-bold);
+}
+
+.modal__close:hover {
+  background-color: var(--bg-container);
+  border-color: var(--bg-container);
+  color: var(--text-inverse);
+}
+
+
+.modal .card__picture-wrapper {
+  display: block;
+  height: 310px;
+  width: 310px;
+  min-width: 310px;
+  max-width: none;
+  overflow: hidden;
+  border-radius: var(--radius-standard);
 }
 
 .no-transition,

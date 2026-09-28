@@ -38,7 +38,25 @@ function createCards() {
   const mobileMedia = matchMedia(MOBILE_QUERY);
 
   const state = { category: categories[0], expanded: false };
-  const refs = { list: null, more: null };
+  const refs = { list: null, more: null, tabs: [], panel: null };
+
+  function selectCategory(category, {focus = false} = {}) {
+    if (category === state.category) return;
+
+    state.category = category;
+    state.expanded = false;
+
+    refs.tabs.forEach((tab) => {
+      const isActive = tab.id === `tab-${category}`;
+      tab.setAttribute('aria-selected', String(isActive));
+      tab.tabIndex = isActive ? 0 : -1;
+
+      if (isActive && focus) tab.focus();
+    });
+
+    refs.panel.setAttribute('aria-labelledby', `tab-${category}`);
+    renderList();
+  }
 
   function createTabs() {
     const tabs = document.createElement('div');
@@ -46,9 +64,35 @@ function createCards() {
     tabs.setAttribute('role', 'tablist');
     tabs.setAttribute('aria-label', TABS_ARIA_LABEL);
 
+    refs.tabs = [];
+
     categories.forEach((category) => {
       const tab = createTab(category);
+      refs.tabs.push(tab);
       tabs.appendChild(tab);
+    });
+
+    tabs.addEventListener('click', (e) => {
+      const tab = e.target.closest('[role="tab"]');
+      if (tab) {
+        selectCategory(tab.dataset.category);
+      }
+    });
+
+    tabs.addEventListener('keydown', (e) => {
+      const index = categories.indexOf(state.category);
+      let next;
+
+      if (e.key === 'ArrowRight') {
+        next = (index + 1) % categories.length;
+      } else if (e.key === 'ArrowLeft') {
+        next = (index - 1 + categories.length) % categories.length;
+      } else if (e.key === 'Home') next = 0;
+      else if (e.key === 'End') next = categories.length - 1;
+      else return;
+
+      e.preventDefault();
+      selectCategory(categories[next], { focus: true });
     });
 
     return tabs;
@@ -61,6 +105,7 @@ function createCards() {
     button.type = 'button';
     button.setAttribute('role', 'tab');
     button.id = `tab-${category}`;
+    button.dataset.category = category;
     button.setAttribute('aria-selected', String(isActive));
     button.setAttribute('aria-controls', PANEL_ID);
     button.tabIndex = (isActive) ? 0: -1;
@@ -141,6 +186,7 @@ function createCards() {
     });
 
     cardsContainer.appendChild(createTabs());
+    refs.panel = panel;
     cardsContainer.appendChild(panel);
 
     renderList();

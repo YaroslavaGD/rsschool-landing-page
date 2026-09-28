@@ -1,4 +1,4 @@
-export const withCategoryIndex = function(cardsData) {
+export const withId = function(cardsData) {
   const counters = {};
 
   return cardsData.map((item) => {

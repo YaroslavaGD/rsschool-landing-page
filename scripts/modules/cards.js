@@ -1,6 +1,6 @@
 import { CARDS_DATA } from "../cards-data.js";
 import { card } from "./card.js";
-import { withCategoryIndex } from "./utils.js";
+import { withId } from "./utils.js";
 
 const CARDS_CLASSES = {
   TABS: 'cards-tabs',
@@ -26,7 +26,7 @@ function getUniqueCategories(cardsData) {
 }
 
 function createCards() {
-  const preparedCardsData = withCategoryIndex(CARDS_DATA);
+  const preparedCardsData = withId(CARDS_DATA);
 
   function createTabs(cardsData) {
     const tabs = document.createElement('div');

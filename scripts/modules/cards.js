@@ -33,6 +33,12 @@ const MORE_ICON_SVG = `
 `;
 
 function createCards() {
+    const cardsContainer = document.querySelector('.cards');
+    if (!cardsContainer) {
+      return {
+        init() {}
+      }
+    }
   const cardsData = withId(CARDS_DATA);
   const categories = getUniqueCategories(cardsData);
   const mobileMedia = matchMedia(MOBILE_QUERY);
@@ -158,8 +164,6 @@ function createCards() {
   }
 
   function init() {
-    const cardsContainer = document.querySelector('.cards');
-
     const panel = document.createElement('div');
     panel.classList.add(CARDS_CLASSES.TABS_CONTENT);
     panel.id = PANEL_ID;

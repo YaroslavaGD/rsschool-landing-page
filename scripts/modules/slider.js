@@ -75,7 +75,6 @@ function createSlider() {
     currentDeltaPercent = (deltaPx / wrappedWidth) * 100;
 
     setTrackPosition(false, currentDeltaPercent);
-    // updateDots();
   }
 
   function handleTouchEnd() {

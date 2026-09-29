@@ -1,9 +1,10 @@
 import { CARDS_DATA } from "../cards-data.js";
-import { card } from "./card.js";
+import { card, CARD_CLASSES } from "./card.js";
 import { withId, getUniqueCategories, getCategoryItems } from "./utils.js";
 import { modal } from "./modal.js";
 
 const CARDS_CLASSES = {
+  CARDS: 'cards',
   TABS: 'cards-tabs',
   TABS_ITEM: 'cards-tabs__item',
   TABS_ICON: 'cards-tabs__icon',
@@ -34,7 +35,7 @@ const MORE_ICON_SVG = `
 `;
 
 function createCards() {
-    const cardsContainer = document.querySelector('.cards');
+    const cardsContainer = document.querySelector(`.${CARDS_CLASSES.CARDS}`);
     if (!cardsContainer) {
       return {
         init() {}
@@ -174,7 +175,7 @@ function createCards() {
     refs.list = document.createElement('ul');
     refs.list.classList.add(CARDS_CLASSES.LIST);
     refs.list.addEventListener('click', (e) => {
-      const cardElement = e.target.closest('.card');
+      const cardElement = e.target.closest(`.${CARD_CLASSES.CARD}`);
       if (!cardElement) return;
 
       const data = cardsData.find((item) => item.id === cardElement.dataset.id);

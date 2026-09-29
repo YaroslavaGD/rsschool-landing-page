@@ -53,6 +53,7 @@ function createNavigation() {
   function handleMediaChange(e) {
     if (!e.matches) {
       close();
+      navContainer.removeAttribute('inert');
     }
   }
 

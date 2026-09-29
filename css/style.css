@@ -974,8 +974,7 @@ body {
   flex-direction: row;
   width: 100%;
   max-width: 100%;
-  /* max-width: 800px;
-  width: 800px; */
+  min-height: auto;
   padding: var(--indent-small);
   background-color: var(--bg-page);
 }

@@ -11,7 +11,6 @@
 
   --border-primary: #c1b6ad;
   --border-inverse: #665f55;
-  --modal-primary: #403F3DCC;
 
   /* Typography  */
   --font-size-h1: 4.5rem;
@@ -960,12 +959,12 @@ body {
   max-height: calc(100dvh - 2 * var(--indent-small));
 
   max-width: 800px;
-  width: 800px;
+  width: min(800px, 100dvw - 2 * var(--indent-small));
   overflow: auto;
 }
 
 .modal::backdrop {
-  background-color: var(--modal-primary);
+  background-color: var(--bg-overlay);
 }
 
 .modal-card {
@@ -1140,20 +1139,6 @@ body {
     padding: var(--indent-section) var(--indent-tablet);
   }
 
-  .button-hero { 
-    position: relative;
-    display: flex;
-    min-width: 12.5rem;
-    min-height: 64px;
-    gap: var(--indent-icon-gap);
-    text-decoration: none;
-    font-size: var(--font-size-regular);
-    font-weight: var(--font-weight-bold);
-    line-height: var(--line-height-standard);
-    overflow-x: hidden;
-    padding-right: calc(var(--indent-button) - var(--size-icon-small) - var(--indent-icon-gap));
-  }
-
   .button-hero__wrapper {
     transform: translateX(0);
   }
@@ -1256,6 +1241,7 @@ body {
     justify-content: center;
     height: 100%;
     gap: var(--indent-tablet);
+    overflow: auto;
   }
 
   .nav__item {

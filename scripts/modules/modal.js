@@ -32,7 +32,7 @@ const SIZES_TITLE = 'Size';
 const ADDITIVES_TITLE = 'Additives';
 
 const TOTAL_LABEL_TEXT = 'Total:';
-const HINT_TEXT = 'The total price depends on the selected size and additives. After adding the item, you can review it in My order.';
+const HINT_TEXT = 'The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.';
 
 
 function createModal() {

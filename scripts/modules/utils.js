@@ -21,3 +21,19 @@ export const getUniqueCategories = function(cardsData) {
 export const getCategoryItems = function(cardsData, category) {
   return cardsData.filter((item) => item.category === category );
 }
+
+const toCents = (value) => Math.round(parseFloat(value) * 100);
+
+export const formatPrice = (cents) => `$${(cents / 100).toFixed(2)}`;
+
+export function calcTotalPrice(cardData, sizeKey, selectedAdditives) {
+  const {price, sizes, additives} = cardData;
+
+  const base = toCents(price);
+  const size = toCents(sizes[sizeKey]['add-price']);
+  const extra = additives
+    .filter((additive) => selectedAdditives.has(additive.name))
+    .reduce((sum, additive) => sum + toCents(additive['add-price']), 0);
+  
+  return base + size + extra;
+}

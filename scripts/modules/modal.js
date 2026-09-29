@@ -55,7 +55,7 @@ function createModal() {
     const content = document.createElement('div');
     content.classList.add(CARD_CLASSES.CONTENT);
 
-    const title = createTitle(data, idDescription, idPrice);
+    const title = createTitle(data);
     const description = createDescription(data, idDescription);
     const price = createPrice(data, idPrice);
     const close = createClose();

@@ -50,7 +50,6 @@ function createCard() {
     const button = document.createElement('button');
     button.classList.add(CARD_CLASSES.BUTTON);
     button.type = 'button';
-    button.ariaHasPopup = 'dialog';
     button.setAttribute('aria-haspopup', 'dialog');
     button.setAttribute('aria-describedby', `${idDescription} ${idPrice}`);
     button.textContent = name;

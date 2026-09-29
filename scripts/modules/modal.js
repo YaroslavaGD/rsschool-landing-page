@@ -137,9 +137,10 @@ function createModal() {
 
   function createOption({type, name, value, mark, text, checked = false}) {
     const label = document.createElement('label');
-    label.classList.add(MODAL_CLASSES.OPTION,  CARD_CLASSES.VISUALLY_HIDDEN);
+    label.classList.add(MODAL_CLASSES.OPTION);
 
     const input = document.createElement('input');
+    input.classList.add(MODAL_CLASSES.OPTION_INPUT, CARD_CLASSES.VISUALLY_HIDDEN);
     Object.assign(input, { type, name, value, checked });
 
     const markElement = document.createElement('span');

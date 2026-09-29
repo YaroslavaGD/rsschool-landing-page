@@ -26,14 +26,13 @@ const toCents = (value) => Math.round(parseFloat(value) * 100);
 
 export const formatPrice = (cents) => `$${(cents / 100).toFixed(2)}`;
 
-export function calcTotalPrice(cardData, sizeKey, selectedAdditives) {
+export function calcTotalPrice(cardData, sizeKey, selectedIndexes) {
   const {price, sizes, additives} = cardData;
-
   const base = toCents(price);
   const size = toCents(sizes[sizeKey]['add-price']);
   const extra = additives
-    .filter((additive) => selectedAdditives.has(additive.name))
+    .filter((_, index) => selectedIndexes.has(index))
     .reduce((sum, additive) => sum + toCents(additive['add-price']), 0);
-  
+
   return base + size + extra;
 }
